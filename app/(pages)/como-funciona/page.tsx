@@ -2,15 +2,33 @@ import type { Metadata } from "next"
 import { Section } from "@/components/ui/section"
 import { Button } from "@/components/ui/button"
 import { cn } from "@/lib/utils"
+import { BreadcrumbList } from "@/components/seo/breadcrumb-list"
+import { HowToSchema } from "@/components/seo/how-to-schema"
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 
 export const metadata: Metadata = {
-  title: "Como funciona",
+  title: "Como Funciona — Cortar Vídeo com IA em 3 Passos Simples",
   description:
-    "Veja como o Sleepcomet transforma vídeos longos em clipes virais: upload, transcrição com IA, detecção de cenas e exportação em segundos. Acesse em app.sleepcomet.com.",
+    "Veja como cortar vídeo com IA em apenas 3 passos: faça upload, a inteligência artificial analisa o conteúdo e gera clipes prontos para TikTok, Instagram Reels e YouTube Shorts. Teste grátis.",
+  keywords: [
+    "como cortar vídeo com IA",
+    "como funciona clipagem com inteligência artificial",
+    "passo a passo para criar clipes",
+    "upload e transcrição de vídeo",
+    "inteligência artificial para vídeos",
+    "como gerar clipes virais",
+    "pipeline de clipagem automática",
+    "transcrição com Whisper",
+  ],
   openGraph: {
-    title: "Como funciona | Sleepcomet",
+    title: "Como Funciona — Cortar Vídeo com IA em 3 Passos | Sleepcomet",
     description:
-      "Sleepcomet analisa, transcreve e extrai os melhores momentos do seu vídeo automaticamente.",
+      "Faça upload, a IA analisa o conteúdo e gera clipes prontos. Transcrição, detecção de cenas e exportação automatizados.",
+    url: `${siteUrl}/como-funciona/`,
+  },
+  alternates: {
+    canonical: `${siteUrl}/como-funciona/`,
   },
 }
 
@@ -24,32 +42,26 @@ const steps = [
   },
   {
     number: "02",
-    title: "Transcrição do áudio",
+    title: "A IA analisa o conteúdo",
     description:
-      "O áudio é transcrito com Faster-Whisper em português. Cada palavra recebe um timestamp preciso, permitindo sincronia exata entre fala e legenda.",
+      "O áudio é transcrito com Faster-Whisper em português. Cada palavra recebe um timestamp preciso. Simultaneamente, o OpenCV detecta mudanças de cena e picos de movimento.",
     gradient: "from-purple-500 to-pink-400",
   },
   {
     number: "03",
-    title: "Análise e detecção de cenas",
+    title: "Clipes prontos em segundos",
     description:
-      "A transcrição é analisada por palavras-chave de hook, emoção e contraste. Simultaneamente, o OpenCV detecta mudanças de cena e picos de movimento quadro a quadro.",
-    gradient: "from-amber-500 to-orange-400",
-  },
-  {
-    number: "04",
-    title: "Seleção dos melhores momentos",
-    description:
-      "Combinamos pontuação por palavras-chave, posição das cenas e intensidade de movimento para selecionar até 10 clipes de 15 a 60 segundos cada.",
+      "A combinação de transcrição, detecção de cenas e pontuação seleciona até 10 clipes de 15 a 60 segundos cada, prontos para publicar.",
     gradient: "from-green-500 to-emerald-400",
   },
-  {
-    number: "05",
-    title: "Clipes prontos no dashboard",
-    description:
-      "Cada clipe é extraído com ffmpeg, recebe legendas queimadas e thumbnail. Tudo disponível para download ou visualização.",
-    gradient: "from-rose-500 to-red-400",
-  },
+]
+
+const howToSteps = [
+  { name: "Faça upload ou cole um link", text: "Envie seu vídeo em MP4, MOV ou cole um link do YouTube. O Sleepcomet baixa o vídeo automaticamente." },
+  { name: "Transcrição do áudio com IA", text: "O áudio é transcrito com Faster-Whisper em português com timestamps palavra por palavra." },
+  { name: "Análise e detecção de cenas", text: "A transcrição é analisada por palavras-chave e o OpenCV detecta mudanças de cena automaticamente." },
+  { name: "Seleção dos melhores momentos", text: "Até 10 clipes são selecionados combinando pontuação de viralidade, cenas e movimento." },
+  { name: "Exportação dos clipes", text: "Cada clipe é extraído com ffmpeg, recebe legendas queimadas e thumbnail automaticamente." },
 ]
 
 const pipelineSteps = [
@@ -88,13 +100,24 @@ const pipelineSteps = [
 export default function ComoFunciona() {
   return (
     <div className="pt-20">
+      <HowToSchema
+        name="Como cortar vídeo com IA em 3 passos"
+        description="Aprenda a transformar vídeos longos em clipes virais usando inteligência artificial. Faça upload, a IA analisa e gera clipes automaticamente."
+        steps={howToSteps}
+        totalTime="PT5M"
+      />
       <Section className="text-center">
-        <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
-          Como funciona o <span className="text-primary">Sleepcomet</span>
-        </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Do upload aos clipes prontos em minutos. Transcrição, análise e corte automatizados.
-        </p>
+        <div className="mx-auto max-w-4xl">
+          <BreadcrumbList items={[{ name: "Como funciona", url: `${siteUrl}/como-funciona/` }]} />
+          <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
+            Como{" "}
+            <span className="text-primary">cortar vídeo</span> com IA
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+            Do upload aos clipes prontos em minutos. Transcrição, análise e corte automatizados com
+            inteligência artificial.
+          </p>
+        </div>
       </Section>
 
       <Section>
@@ -120,9 +143,9 @@ export default function ComoFunciona() {
 
       <Section className="bg-muted/30">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-center text-3xl font-bold">Pipeline técnico</h2>
+          <h2 className="text-center text-3xl font-bold">Pipeline técnico de clipagem</h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
-            As etapas que seu vídeo percorre até virar clipes prontos.
+            As etapas que seu vídeo percorre até virar clipes prontos para redes sociais.
           </p>
           <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {pipelineSteps.map((item) => (

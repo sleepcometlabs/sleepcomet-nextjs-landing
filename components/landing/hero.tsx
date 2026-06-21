@@ -54,17 +54,17 @@ export function Hero() {
         </div>
 
         <h1 className="text-3xl leading-tight font-bold tracking-tight sm:text-6xl md:text-6xl">
-          Transforme seus vídeos
+          Cortar vídeo com IA
           <br />
           <span className="bg-linear-to-r from-brand to-brand/60 bg-clip-text text-transparent">
-            em clipes virais
+            crie clipes virais em segundos
           </span>
         </h1>
 
         <p className="max-w-2xl text-base text-muted-foreground sm:text-lg">
-          Sleepcomet usa inteligência artificial para encontrar os melhores momentos
-          dos seus vídeos e criar clipes prontos para TikTok, Instagram,
-          YouTube e Reels.
+          Inteligência artificial que analisa seus vídeos, encontra os melhores
+          momentos e gera clipes prontos para TikTok, Instagram Reels e YouTube
+          Shorts. Comece grátis sem cartão de crédito.
         </p>
 
         <div className="flex items-center gap-4">

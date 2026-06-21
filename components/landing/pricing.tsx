@@ -119,11 +119,10 @@ export function Pricing() {
     <section id="precos" className="@container flex flex-col gap-16 px-4 py-16 sm:py-28 text-center">
       <div className="flex flex-col items-center justify-center gap-8">
         <h2 className="text-4xl leading-tight font-semibold tracking-tight sm:text-5xl">
-          Preços simples e transparentes
+          Planos de clipagem com IA a partir de $0
         </h2>
         <p className="mx-auto max-w-2xl text-balance text-lg text-muted-foreground">
-          Do criador independente à agência — um plano que cabe no seu bolso
-          e escala conforme você cresce.
+          Comece grátis e escale conforme cresce. Planos para criadores independentes, profissionais e agências.
         </p>
         <Tabs
           defaultValue={frequency}

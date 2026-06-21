@@ -1,15 +1,29 @@
 import type { Metadata } from "next"
 import { Section } from "@/components/ui/section"
 import { Button } from "@/components/ui/button"
+import { BreadcrumbList } from "@/components/seo/breadcrumb-list"
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 
 export const metadata: Metadata = {
-  title: "Sobre",
+  title: "Sobre o Sleepcomet — Plataforma de Clipagem com Inteligência Artificial",
   description:
-    "Conheça o Sleepcomet, a plataforma de clipagem com IA. Missão, tecnologia e como transformamos vídeos longos em clipes virais em segundos.",
+    "Conheça o Sleepcomet, a plataforma de clipagem com IA. Nossa missão é eliminar o trabalho repetitivo da edição de vídeo para que criadores de conteúdo foquem no que importa: criar e crescer.",
+  keywords: [
+    "sobre o sleepcomet",
+    "plataforma de clipagem com IA",
+    "quem criou o sleepcomet",
+    "ferramenta de IA para criadores",
+    "missão do sleepcomet",
+  ],
   openGraph: {
-    title: "Sobre o Sleepcomet | Clipagem com IA",
+    title: "Sobre o Sleepcomet — Clipagem com IA | Sleepcomet",
     description:
       "Sleepcomet é uma plataforma que usa inteligência artificial para criar clipes virais automaticamente em segundos.",
+    url: `${siteUrl}/sobre/`,
+  },
+  alternates: {
+    canonical: `${siteUrl}/sobre/`,
   },
 }
 
@@ -36,12 +50,16 @@ export default function Sobre() {
   return (
     <div className="pt-20">
       <Section className="text-center">
-        <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
-          Sobre o <span className="text-primary">Sleepcomet</span>
-        </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Transformando a maneira como criadores de conteúdo produzem clipes virais.
-        </p>
+        <div className="mx-auto max-w-4xl">
+          <BreadcrumbList items={[{ name: "Sobre", url: `${siteUrl}/sobre/` }]} />
+          <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
+            Sobre o{" "}
+            <span className="text-primary">Sleepcomet</span>
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+            Transformando a maneira como criadores de conteúdo produzem clipes virais.
+          </p>
+        </div>
       </Section>
 
       <Section>
@@ -78,10 +96,9 @@ export default function Sobre() {
         </div>
       </Section>
 
-
       <Section className="text-center">
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-2xl font-bold">Sleepcomet-com</h2>
+          <h2 className="text-2xl font-bold">Sleepcomet no GitHub</h2>
           <p className="mt-3 text-muted-foreground">
             Acompanhe o desenvolvimento e as novidades do Sleepcomet no GitHub.
           </p>

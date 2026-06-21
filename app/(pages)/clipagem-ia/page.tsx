@@ -1,16 +1,35 @@
 import type { Metadata } from "next"
 import { Section } from "@/components/ui/section"
 import { Badge } from "@/components/ui/badge"
+import { BreadcrumbList } from "@/components/seo/breadcrumb-list"
+import { HowToSchema } from "@/components/seo/how-to-schema"
 import { ClipagemIACta } from "./clipagem-ia-cta"
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
+
 export const metadata: Metadata = {
-  title: "Clipagem com IA",
+  title: "Clipagem com IA — Cortar Vídeo Automaticamente com Inteligência Artificial",
   description:
-    "O Sleepcomet analisa seu vídeo com IA para detectar cenas, transcrever o áudio e identificar os melhores momentos. Use em app.sleepcomet.com e crie clipes prontos em segundos.",
+    "Aprenda como funciona a clipagem com IA: transcrição automática com Faster-Whisper, detecção de cenas com OpenCV e seleção dos melhores momentos. Corte vídeos automaticamente e crie clipes para TikTok, Reels e Shorts.",
+  keywords: [
+    "clipagem com IA",
+    "cortar vídeo com inteligência artificial",
+    "clipagem automática de vídeo",
+    "IA para cortar vídeo",
+    "melhor ferramenta de clipagem",
+    "como cortar vídeo com IA",
+    "criar clipes automaticamente",
+    "transcrição de vídeo com IA",
+    "detecção de cenas automática",
+  ],
   openGraph: {
-    title: "Clipagem com IA | Sleepcomet",
+    title: "Clipagem com IA — Cortar Vídeo Automaticamente | Sleepcomet",
     description:
-      "Transforme vídeos longos em clipes virais automaticamente com inteligência artificial.",
+      "Transforme vídeos longos em clipes virais automaticamente com inteligência artificial. Transcrição, detecção de cenas e seleção dos melhores momentos.",
+    url: `${siteUrl}/clipagem-ia/`,
+  },
+  alternates: {
+    canonical: `${siteUrl}/clipagem-ia/`,
   },
 }
 
@@ -53,20 +72,38 @@ const features = [
   },
 ]
 
+const howToSteps = [
+  { name: "Faça upload ou cole um link", text: "Envie seu vídeo em MP4, MOV ou cole um link do YouTube. O Sleepcomet baixa o vídeo automaticamente via yt-dlp e inicia o processamento." },
+  { name: "Transcrição do áudio com IA", text: "O áudio é transcrito com Faster-Whisper em português. Cada palavra recebe um timestamp preciso, permitindo sincronia exata entre fala e legenda." },
+  { name: "Análise e detecção de cenas", text: "A transcrição é analisada por palavras-chave de hook, emoção e contraste. Simultaneamente, o OpenCV detecta mudanças de cena e picos de movimento." },
+  { name: "Seleção dos melhores momentos", text: "Combinamos pontuação por palavras-chave, posição das cenas e intensidade de movimento para selecionar até 10 clipes de 15 a 60 segundos cada." },
+  { name: "Exportação dos clipes", text: "Cada clipe é extraído com ffmpeg, recebe legendas queimadas e thumbnail. Tudo disponível para download ou visualização." },
+]
+
 export default function ClipagemIA() {
   return (
     <div className="pt-20">
+      <HowToSchema
+        name="Como fazer clipagem de vídeo com IA"
+        description="Passo a passo para cortar vídeos automaticamente usando inteligência artificial com o Sleepcomet."
+        steps={howToSteps}
+        totalTime="PT5M"
+      />
       <Section className="text-center">
-        <Badge variant="secondary" className="mb-4">
-          Processamento automatizado
-        </Badge>
-        <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
-          Clipagem com <span className="text-primary">IA</span>
-        </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Seu vídeo é analisado por um pipeline de transcrição, detecção de cenas e pontuação de
-          segmentos. O resultado: clipes prontos com os melhores momentos em minutos.
-        </p>
+        <div className="mx-auto max-w-4xl">
+          <BreadcrumbList items={[{ name: "Clipagem com IA", url: `${siteUrl}/clipagem-ia/` }]} />
+          <Badge variant="secondary" className="mb-4">
+            Processamento automatizado
+          </Badge>
+          <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
+            Clipagem com{" "}
+            <span className="text-primary">IA</span>
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+            Seu vídeo é analisado por um pipeline de transcrição, detecção de cenas e pontuação de
+            segmentos. O resultado: clipes prontos com os melhores momentos em minutos.
+          </p>
+        </div>
       </Section>
 
       <Section>
@@ -88,7 +125,7 @@ export default function ClipagemIA() {
 
       <Section className="bg-muted/30">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-center text-3xl font-bold">Como funciona o pipeline</h2>
+          <h2 className="text-center text-3xl font-bold">Como funciona o pipeline de clipagem</h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
             Todo o processo é automatizado. Você cola o link e volta para ver os resultados.
           </p>
@@ -117,7 +154,7 @@ export default function ClipagemIA() {
               {
                 step: "5",
                 title: "Exportação",
-                desc: 'Clipes com legendas queimadas, thumbnails e arquivos SRT são exibidos no dashboard.',
+                desc: "Clipes com legendas queimadas, thumbnails e arquivos SRT são exibidos no dashboard.",
               },
             ].map((item) => (
               <div
@@ -138,9 +175,9 @@ export default function ClipagemIA() {
       </Section>
 
       <Section className="text-center">
-        <h2 className="text-2xl font-bold">Pronto para testar?</h2>
+        <h2 className="text-2xl font-bold">Pronto para testar a clipagem com IA?</h2>
         <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
-          Cole um link do YouTube e veja a mágica acontecer. Grátis para começar.
+          Cole um link do YouTube e veja a mágica acontecer. Comece grátis, sem cartão de crédito.
         </p>
         <ClipagemIACta appUrl={process.env.NEXT_PUBLIC_APP_URL || "http://localhost:5173"} />
       </Section>

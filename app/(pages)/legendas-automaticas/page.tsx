@@ -2,15 +2,35 @@ import type { Metadata } from "next"
 import { Section } from "@/components/ui/section"
 import { Button } from "@/components/ui/button"
 import { Badge } from "@/components/ui/badge"
+import { BreadcrumbList } from "@/components/seo/breadcrumb-list"
+import { HowToSchema } from "@/components/seo/how-to-schema"
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 
 export const metadata: Metadata = {
-  title: "Legendas automáticas",
+  title: "Legendas Automáticas — Transcrição de Vídeo com IA em Português",
   description:
-    "Transcrição automática com IA em português, timestamps palavra por palavra e exportação SRT. Legendas sincronizadas para seus clipes. Disponível em app.sleepcomet.com.",
+    "Gere legendas automáticas para seus vídeos com inteligência artificial. Transcrição precisa em português, timestamps palavra por palavra e exportação SRT. Legendas sincronizadas para TikTok, Reels e Shorts.",
+  keywords: [
+    "legendas automáticas",
+    "transcrição de vídeo com IA",
+    "legendas automáticas para TikTok",
+    "legendas automáticas para Reels",
+    "adicionar legendas em vídeo",
+    "transcrever vídeo em português",
+    "gerar SRT automaticamente",
+    "legendas word-level",
+    "Faster-Whisper legendas",
+    "legendas para YouTube Shorts",
+  ],
   openGraph: {
-    title: "Legendas automáticas | Sleepcomet",
+    title: "Legendas Automáticas — Transcrição com IA | Sleepcomet",
     description:
-      "Adicione legendas word-level aos seus clipes automaticamente com transcrição por IA.",
+      "Transcrição precisa em português com timestamps palavra por palavra. Legendas sincronizadas geradas automaticamente em cada clipe.",
+    url: `${siteUrl}/legendas-automaticas/`,
+  },
+  alternates: {
+    canonical: `${siteUrl}/legendas-automaticas/`,
   },
 }
 
@@ -42,20 +62,37 @@ const features = [
   },
 ]
 
+const howToSteps = [
+  { name: "Extração do áudio", text: "O áudio é extraído do vídeo e convertido para o formato WAV mono de 16kHz." },
+  { name: "Transcrição com Whisper", text: "O modelo Faster-Whisper processa o áudio em português e gera a transcrição com timestamps por palavra." },
+  { name: "Grupos de legenda", text: "As palavras são agrupadas em blocos de até 42 caracteres por linha, respeitando pontuação e pausas naturais." },
+  { name: "Geração de SRT", text: "Arquivo SRT é gerado com os timestamps. As legendas também são queimadas diretamente no vídeo do clipe via ffmpeg." },
+]
+
 export default function LegendasAutomaticas() {
   return (
     <div className="pt-20">
+      <HowToSchema
+        name="Como adicionar legendas automáticas em vídeos"
+        description="Passo a passo para gerar legendas automáticas em português para seus vídeos usando inteligência artificial."
+        steps={howToSteps}
+        totalTime="PT3M"
+      />
       <Section className="text-center">
-        <Badge variant="secondary" className="mb-4">
-          Faster-Whisper
-        </Badge>
-        <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
-          Legendas <span className="text-primary">automáticas</span>
-        </h1>
-        <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-          Transcrição precisa em português com timestamps palavra por palavra. Legendas
-          sincronizadas geradas automaticamente em cada clipe.
-        </p>
+        <div className="mx-auto max-w-4xl">
+          <BreadcrumbList items={[{ name: "Legendas automáticas", url: `${siteUrl}/legendas-automaticas/` }]} />
+          <Badge variant="secondary" className="mb-4">
+            Faster-Whisper
+          </Badge>
+          <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
+            Legendas{" "}
+            <span className="text-primary">automáticas</span> para vídeos
+          </h1>
+          <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
+            Transcrição precisa em português com timestamps palavra por palavra. Legendas
+            sincronizadas geradas automaticamente em cada clipe.
+          </p>
+        </div>
       </Section>
 
       <Section>
@@ -76,7 +113,7 @@ export default function LegendasAutomaticas() {
 
       <Section className="bg-muted/30">
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-center text-3xl font-bold">Como funciona</h2>
+          <h2 className="text-center text-3xl font-bold">Como funciona a geração de legendas</h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
             A transcrição é parte do pipeline principal de clipagem.
           </p>
@@ -122,7 +159,7 @@ export default function LegendasAutomaticas() {
 
       <Section>
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-center text-3xl font-bold">Formatos de exportação</h2>
+          <h2 className="text-center text-3xl font-bold">Formatos de exportação de legendas</h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
             As legendas são geradas em dois formatos, dependendo da sua necessidade.
           </p>
@@ -154,7 +191,13 @@ export default function LegendasAutomaticas() {
       </Section>
 
       <Section className="text-center">
-        <Button size="lg">Gerar legendas grátis</Button>
+        <h2 className="text-2xl font-bold">Gere legendas automáticas grátis</h2>
+        <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
+          Cole um link do YouTube ou faça upload e receba legendas sincronizadas em segundos.
+        </p>
+        <div className="mt-6">
+          <Button size="lg">Começar grátis</Button>
+        </div>
       </Section>
     </div>
   )

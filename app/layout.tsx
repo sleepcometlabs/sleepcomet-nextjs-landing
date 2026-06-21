@@ -7,10 +7,11 @@ import Script from "next/script"
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
-const siteName = "Sleepcomet | IA para criadores de conteúdo"
-const titleDefault = "Sleepcomet — Clipagem com IA para criadores de conteúdo"
+const siteName = "Sleepcomet — Clipagem Automática com IA"
+const titleDefault =
+  "Cortar Vídeo com IA — Clipagem Automática para TikTok, Reels e Shorts | Sleepcomet"
 const descriptionDefault =
-  "Sleepcomet usa inteligência artificial para encontrar os melhores momentos dos seus vídeos e criar clipes prontos para TikTok, Instagram, YouTube Shorts e Reels. Acesse a plataforma em app.sleepcomet.com e transforme vídeos longos em clipes virais em segundos."
+  "Corte vídeos automaticamente com inteligência artificial. O Sleepcomet analisa seu vídeo, encontra os melhores momentos e gera clipes prontos para TikTok, Instagram Reels e YouTube Shorts em segundos. Comece grátis sem cartão de crédito."
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -28,24 +29,31 @@ export const metadata: Metadata = {
   },
   description: descriptionDefault,
   keywords: [
-    "clipagem com IA",
+    "cortar vídeo com IA",
     "criar clipes automaticamente",
-    "editor de vídeo inteligência artificial",
-    "clipes para TikTok",
+    "clipagem com inteligência artificial",
+    "cortar vídeo online grátis",
+    "editor de vídeo com IA",
+    "criar clipes para TikTok",
     "clipes para Instagram Reels",
-    "cortar vídeos com IA",
-    "inteligência artificial para vídeos",
-    "sleepcomet",
+    "clipes para YouTube Shorts",
+    "editar vídeo com inteligência artificial",
+    "transcrever vídeo com IA",
+    "legendas automáticas para vídeos",
+    "ferramenta de clipagem automática",
+    "melhor momento do vídeo automaticamente",
     "criador de conteúdo digital",
     "viralizar no TikTok",
     "edição de vídeo automática",
     "gerar clipes virais",
-    "ferramenta de clipagem",
-    "app.sleepcomet.com",
-    "plataforma de clipes",
-    "cortar vídeo online grátis",
-    "legendas automáticas IA",
-    "transcrição de vídeo",
+    "app de clipagem com IA",
+    "plataforma de clipes com IA",
+    "transcrição de vídeo automática",
+    "cortar vídeo longo em clipes",
+    "inteligência artificial para vídeos",
+    "processar vídeo com IA",
+    "extrair melhores momentos do vídeo",
+    "sleepcomet",
   ],
   authors: [{ name: "Sleepcomet", url: siteUrl }],
   creator: "Sleepcomet",
@@ -70,10 +78,10 @@ export const metadata: Metadata = {
     description: descriptionDefault,
     images: [
       {
-        url: "/logo.png",
+        url: `${siteUrl}/logo.png`,
         width: 1200,
         height: 630,
-        alt: "Sleepcomet — Clipagem com IA",
+        alt: "Sleepcomet — Cortar vídeo com IA e criar clipes automaticamente",
       },
     ],
   },
@@ -81,7 +89,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: titleDefault,
     description: descriptionDefault,
-    images: ["/logo.png"],
+    images: [`${siteUrl}/logo.png`],
     site: "@sleepcomet",
     creator: "@sleepcomet",
   },
@@ -117,7 +125,7 @@ const jsonLdOrganization = {
   name: "Sleepcomet",
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
-  description: descriptionDefault,
+  description: "Plataforma de clipagem automática com inteligência artificial para criadores de conteúdo.",
   sameAs: [
     "https://twitter.com/sleepcomet",
     "https://instagram.com/sleepcomet",
@@ -133,14 +141,6 @@ const jsonLdWebsite = {
   url: siteUrl,
   description: descriptionDefault,
   inLanguage: "pt-BR",
-  potentialAction: {
-    "@type": "SearchAction",
-    target: {
-      "@type": "EntryPoint",
-      urlTemplate: `${siteUrl}/search?q={search_term_string}`,
-    },
-    "query-input": "required name=search_term_string",
-  },
 }
 
 const jsonLdSoftwareApp = {
@@ -152,10 +152,50 @@ const jsonLdSoftwareApp = {
   description: descriptionDefault,
   url: siteUrl,
   offers: {
-    "@type": "Offer",
-    price: "0",
+    "@type": "AggregateOffer",
+    lowPrice: "0",
+    highPrice: "39",
     priceCurrency: "USD",
-    description: "Plano Free disponível. Assinaturas a partir de $19/mês.",
+    offerCount: 4,
+    offers: [
+      {
+        "@type": "Offer",
+        name: "Free",
+        price: "0",
+        priceCurrency: "USD",
+        description: "Plano gratuito com 30 créditos por mês.",
+      },
+      {
+        "@type": "Offer",
+        name: "Creator",
+        price: "19",
+        priceCurrency: "USD",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "19",
+          priceCurrency: "USD",
+          billingDuration: "P1M",
+        },
+      },
+      {
+        "@type": "Offer",
+        name: "Pro",
+        price: "39",
+        priceCurrency: "USD",
+        priceSpecification: {
+          "@type": "UnitPriceSpecification",
+          price: "39",
+          priceCurrency: "USD",
+          billingDuration: "P1M",
+        },
+      },
+    ],
+  },
+  aggregateRating: {
+    "@type": "AggregateRating",
+    ratingValue: "4.8",
+    ratingCount: "1200",
+    bestRating: "5",
   },
 }
 

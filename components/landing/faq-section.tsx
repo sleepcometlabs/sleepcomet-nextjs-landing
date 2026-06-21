@@ -14,7 +14,11 @@ const faqs = [
     a: "Sleepcomet é uma ferramenta com inteligência artificial que analisa seus vídeos, identifica os melhores momentos e gera clipes prontos para publicar em redes sociais como TikTok, Instagram Reels, YouTube Shorts e Facebook.",
   },
   {
-    q: "Como a IA encontra os melhores momentos?",
+    q: "Como cortar vídeo com inteligência artificial?",
+    a: "O Sleepcomet usa IA para transcrever o áudio, detectar mudanças de cena e pontuar os melhores momentos automaticamente. Você faz upload do vídeo e a plataforma gera clipes prontos em segundos.",
+  },
+  {
+    q: "Como a IA encontra os melhores momentos do vídeo?",
     a: "Nossa IA analisa padrões de áudio, movimento, expressões faciais e engajamento para detectar os destaques do seu vídeo automaticamente. Você também pode ajustar manualmente os cortes.",
   },
   {
@@ -26,12 +30,12 @@ const faqs = [
     a: "Sim! O plano Free oferece 30 créditos por mês para você processar seus vídeos (1 crédito = 1 minuto de vídeo), com clipes de até 60 segundos, marca d'água Sleepcomet e acesso ao suporte da comunidade no Discord. Sem compromisso.",
   },
   {
-    q: "O Sleepcomet adiciona marca d'água?",
-    a: "Apenas no plano Free. Nos planos Creator, Pro e Enterprise todos os clipes saem sem marca d'água.",
-  },
-  {
     q: "Quanto tempo leva para processar um vídeo?",
     a: "O processamento leva em média 30 segundos para cada minuto de vídeo. Vídeos mais longos podem demorar um pouco mais.",
+  },
+  {
+    q: "O Sleepcomet adiciona marca d'água?",
+    a: "Apenas no plano Free. Nos planos Creator, Pro e Enterprise todos os clipes saem sem marca d'água.",
   },
   {
     q: "Posso cancelar minha assinatura?",

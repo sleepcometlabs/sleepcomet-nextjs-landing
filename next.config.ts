@@ -2,10 +2,10 @@ import type { NextConfig } from "next"
 
 const nextConfig: NextConfig = {
   output: "export",
+  trailingSlash: true,
   experimental: {
     inlineCss: true,
   },
-  skipTrailingSlashRedirect: true,
   images: {
     unoptimized: true,
     remotePatterns: [

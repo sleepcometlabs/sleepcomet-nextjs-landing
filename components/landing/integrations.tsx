@@ -8,10 +8,10 @@ export function Integrations() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-12">
         <div className="flex flex-col gap-3 text-center">
           <h2 className="text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-            Compatível com suas plataformas favoritas
+            Clipes otimizados para TikTok, Reels e YouTube Shorts
           </h2>
           <p className="text-muted-foreground">
-            Clipes otimizados para cada rede social — proporção, duração e formato certos.
+            Proporção, duração e formato automaticamente ajustados para cada rede social.
           </p>
         </div>
 

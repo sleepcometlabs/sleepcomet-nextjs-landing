@@ -1,20 +1,110 @@
 import type { Metadata } from "next"
 import { Pricing } from "@/components/landing/pricing"
+import { BreadcrumbList } from "@/components/seo/breadcrumb-list"
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 
 export const metadata: Metadata = {
-  title: "Preços",
+  title: "Preços — Planos de Clipagem com IA a partir de $0 (Grátis)",
   description:
-    "Planos do Sleepcomet para criadores de conteúdo. Comece grátis sem cartão de crédito. Assinaturas a partir de $19/mês.",
+    "Planos do Sleepcomet para criar clipes com IA. Comece grátis sem cartão de crédito. Creator a partir de $19/mês, Pro a partir de $39/mês. Compare planos e economize 20% no anual.",
+  keywords: [
+    "preço clipagem com IA",
+    "planos de clipagem automática",
+    "ferramenta de clipagem preço",
+    "editor de vídeo com IA preço",
+    "sleepcomet planos",
+    "clipagem IA grátis",
+    "criar clipes barato",
+    "assinar clipagem com IA",
+  ],
   openGraph: {
-    title: "Preços | Sleepcomet",
+    title: "Preços — Planos de Clipagem com IA a partir de $0 | Sleepcomet",
     description:
-      "Planos acessíveis para criadores. Teste grátis e cancele quando quiser.",
+      "Planos acessíveis para criadores. Comece grátis, cancele quando quiser. Economize 20% no plano anual.",
+    url: `${siteUrl}/precos/`,
   },
+  alternates: {
+    canonical: `${siteUrl}/precos/`,
+  },
+}
+
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: "Planos do Sleepcomet",
+  description: "Planos de assinatura para clipagem automática com inteligência artificial.",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      item: {
+        "@type": "Product",
+        name: "Sleepcomet Free",
+        description: "Plano gratuito com 30 créditos por mês, clipes de até 60 segundos e marca d'água.",
+        offers: {
+          "@type": "Offer",
+          price: "0",
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+        },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      item: {
+        "@type": "Product",
+        name: "Sleepcomet Creator",
+        description: "Plano para criadores com 300 créditos/mês, Full HD e sem marca d'água.",
+        offers: {
+          "@type": "Offer",
+          price: "19",
+          priceCurrency: "USD",
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: "19",
+            priceCurrency: "USD",
+            billingDuration: "P1M",
+          },
+          availability: "https://schema.org/InStock",
+        },
+      },
+    },
+    {
+      "@type": "ListItem",
+      position: 3,
+      item: {
+        "@type": "Product",
+        name: "Sleepcomet Pro",
+        description: "Plano profissional com 1.000 créditos/mês, 4K, GPU dedicada e suporte prioritário.",
+        offers: {
+          "@type": "Offer",
+          price: "39",
+          priceCurrency: "USD",
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: "39",
+            priceCurrency: "USD",
+            billingDuration: "P1M",
+          },
+          availability: "https://schema.org/InStock",
+        },
+      },
+    },
+  ],
 }
 
 export default function PrecosPage() {
   return (
     <div className="pt-20">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <div className="mx-auto max-w-6xl px-4 pt-8">
+        <BreadcrumbList items={[{ name: "Preços", url: `${siteUrl}/precos/` }]} />
+      </div>
       <Pricing />
     </div>
   )

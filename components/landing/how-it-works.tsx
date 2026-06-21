@@ -22,10 +22,10 @@ export function HowItWorks() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-16">
         <div className="flex flex-col gap-3 text-center">
           <h2 className="text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-            Como funciona
+            Como cortar vídeo com IA em 3 passos
           </h2>
           <p className="text-muted-foreground">
-            Três passos simples para transformar seus vídeos em clipes virais.
+            Faça upload, a inteligência artificial analisa e gera clipes prontos em segundos.
           </p>
         </div>
 

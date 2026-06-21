@@ -49,10 +49,10 @@ export default function FeaturesSectionDemo() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-12">
         <div className="flex flex-col gap-3 text-center">
           <h2 className="text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-            Tudo que você precisa para criar clipes virais
+            Ferramentas de IA para cortar vídeo e criar clipes
           </h2>
           <p className="text-muted-foreground">
-            Ferramentas completas de IA para criadores de conteúdo.
+            Tudo que você precisa para transformar vídeos longos em clipes virais automaticamente.
           </p>
         </div>
 

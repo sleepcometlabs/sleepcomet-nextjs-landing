@@ -13,10 +13,10 @@ export function Comparison() {
       <div className="mx-auto flex max-w-6xl flex-col items-center gap-12">
         <div className="flex flex-col gap-3 text-center">
           <h2 className="text-3xl leading-tight font-semibold tracking-tight sm:text-4xl">
-            Sleepcomet vs edição manual
+            Cortar vídeo com IA vs edição manual
           </h2>
           <p className="text-muted-foreground">
-            Veja a diferença que a IA faz na sua produtividade.
+            Veja por que milhares de criadores escolhem a clipagem automática com inteligência artificial.
           </p>
         </div>
 

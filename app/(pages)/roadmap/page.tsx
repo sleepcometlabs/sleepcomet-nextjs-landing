@@ -2,15 +2,30 @@ import type { Metadata } from "next"
 import { Section } from "@/components/ui/section"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
+import { BreadcrumbList } from "@/components/seo/breadcrumb-list"
+
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 
 export const metadata: Metadata = {
-  title: "Roadmap",
+  title: "Roadmap — Novas Funcionalidades e Atualizações do Sleepcomet",
   description:
-    "Roadmap do Sleepcomet. Veja o que já foi lançado, o que estamos construindo agora e as próximas funcionalidades planejadas.",
+    "Veja o que já foi lançado, o que estamos construindo agora e as próximas funcionalidades do Sleepcomet. Editor de vídeo integrado, suporte a podcasts, app mobile e mais.",
+  keywords: [
+    "roadmap sleepcomet",
+    "novas funcionalidades sleepcomet",
+    "atualizações sleepcomet",
+    "próximas features sleepcomet",
+    "editor de vídeo integrado",
+    "app mobile clipagem IA",
+  ],
   openGraph: {
-    title: "Roadmap | Sleepcomet",
+    title: "Roadmap — Novas Funcionalidades do Sleepcomet",
     description:
       "Acompanhe a evolução do Sleepcomet. Funcionalidades passadas, presentes e futuras.",
+    url: `${siteUrl}/roadmap/`,
+  },
+  alternates: {
+    canonical: `${siteUrl}/roadmap/`,
   },
 }
 
@@ -93,10 +108,13 @@ export default function Roadmap() {
   return (
     <div className="pt-20">
       <Section className="text-center">
-        <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">Roadmap</h1>
-        <p className="mx-auto mt-4 max-w-md text-lg text-muted-foreground">
-          Acompanhe a evolução do Sleepcomet. Do MVP ao futuro da criação de conteúdo com IA.
-        </p>
+        <div className="mx-auto max-w-4xl">
+          <BreadcrumbList items={[{ name: "Roadmap", url: `${siteUrl}/roadmap/` }]} />
+          <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">Roadmap</h1>
+          <p className="mx-auto mt-4 max-w-md text-lg text-muted-foreground">
+            Acompanhe a evolução do Sleepcomet. Do MVP ao futuro da criação de conteúdo com IA.
+          </p>
+        </div>
       </Section>
 
       <Section>
