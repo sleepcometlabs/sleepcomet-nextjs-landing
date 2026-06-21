@@ -1,0 +1,25 @@
+# Dependências de Node
+node_modules/
+
+# Builds e exports de Next.js
+.next/
+/out/
+
+# OpenNext e Wrangler (Cloudflare)
+.open-next/
+.wrangler/
+.dev.vars*
+!.dev.vars.example
+
+# Configurações locais sensíveis
+.env
+.env.local
+.env.*.local
+
+# Logs e arquivos de sistema
+*.log
+npm-debug.log*
+.DS_Store
+.idea/
+.vscode/
+*.sw?
