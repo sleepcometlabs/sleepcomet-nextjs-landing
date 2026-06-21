@@ -22,4 +22,8 @@ npm-debug.log*
 .DS_Store
 .idea/
 .vscode/
+.claude/
 *.sw?
+
+# Build artifacts
+tsconfig.tsbuildinfo
