@@ -281,29 +281,27 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSoftwareApp) }}
           strategy="afterInteractive"
         />
-        {process.env.NEXT_PUBLIC_CHATWOOT_WEBSITE_TOKEN && (
-          <Script
-            id="chatwoot"
-            strategy="lazyOnload"
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.chatwootSettings = { position: "right", type: "standard", launcherTitle: "Fale conosco" };
-                (function(d,t) {
-                  var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-                  g.src="https://chatwoot.sleepcomet.com/packs/js/sdk.js";
-                  g.defer=!0;g.async=!0;
-                  s.parentNode.insertBefore(g,s);
-                  g.onload=function(){
-                    window.chatwootSDK.run({
-                      websiteToken: "${process.env.NEXT_PUBLIC_CHATWOOT_WEBSITE_TOKEN}",
-                      baseUrl: "https://chatwoot.sleepcomet.com"
-                    });
-                  };
-                })(document,"script");
-              `,
-            }}
-          />
-        )}
+        <Script
+          id="chatwoot"
+          strategy="lazyOnload"
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.chatwootSettings = { position: "right", type: "standard", launcherTitle: "Fale conosco" };
+              (function(d,t) {
+                var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+                g.src="https://chatwoot.sleepcomet.com/packs/js/sdk.js";
+                g.defer=!0;g.async=!0;
+                s.parentNode.insertBefore(g,s);
+                g.onload=function(){
+                  window.chatwootSDK.run({
+                    websiteToken: "hjwLvwVrRP8FrsKAQbQmN828",
+                    baseUrl: "https://chatwoot.sleepcomet.com"
+                  });
+                };
+              })(document,"script");
+            `,
+          }}
+        />
       </body>
     </html>
   )
