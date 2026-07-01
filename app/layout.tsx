@@ -281,7 +281,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLdSoftwareApp) }}
           strategy="afterInteractive"
         />
-        {process.env.NEXT_PUBLIC_CHATWOOT_FRONTEND_URL && process.env.NEXT_PUBLIC_CHATWOOT_WEBSITE_TOKEN && (
+        {process.env.NEXT_PUBLIC_CHATWOOT_WEBSITE_TOKEN && (
           <Script
             id="chatwoot"
             strategy="lazyOnload"
@@ -290,13 +290,13 @@ export default function RootLayout({
                 window.chatwootSettings = { position: "right", type: "standard", launcherTitle: "Fale conosco" };
                 (function(d,t) {
                   var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-                  g.src="${process.env.NEXT_PUBLIC_CHATWOOT_FRONTEND_URL}/packs/js/sdk.js";
+                  g.src="https://chatwoot.sleepcomet.com/packs/js/sdk.js";
                   g.defer=!0;g.async=!0;
                   s.parentNode.insertBefore(g,s);
                   g.onload=function(){
                     window.chatwootSDK.run({
                       websiteToken: "${process.env.NEXT_PUBLIC_CHATWOOT_WEBSITE_TOKEN}",
-                      baseUrl: "${process.env.NEXT_PUBLIC_CHATWOOT_FRONTEND_URL}"
+                      baseUrl: "https://chatwoot.sleepcomet.com"
                     });
                   };
                 })(document,"script");
