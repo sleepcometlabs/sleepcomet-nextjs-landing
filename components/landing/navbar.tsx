@@ -6,6 +6,7 @@ import Image from "next/image"
 import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
 import posthog from "posthog-js"
+import { APP_URL } from "@/lib/config"
 
 const navItems = [
   {
@@ -111,7 +112,7 @@ export function Navbar() {
 
           <div className="relative z-10 flex items-center gap-2">
             <Link
-              href={process.env.NEXT_PUBLIC_APP_URL || "http://localhost:5173"}
+              href={APP_URL}
               className="hidden text-sm text-muted-foreground transition-colors hover:text-foreground md:block"
               onClick={() => posthog.capture("login_clicked", { location: "navbar" })}
             >
@@ -163,7 +164,7 @@ export function Navbar() {
               </Link>
               <hr className="my-2 border-border/50" />
               <Link
-                href={process.env.NEXT_PUBLIC_APP_URL || "http://localhost:5173"}
+                href={APP_URL}
                 onClick={() => {
                   setOpen(false)
                   posthog.capture("login_clicked", { location: "mobile_navbar" })

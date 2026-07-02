@@ -8,6 +8,7 @@ import { AnimatedShinyText } from "@/components/ui/animated-shiny-text"
 import { AvatarCircles } from "@/components/ui/avatar-circles"
 import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { LiquidBackground } from "../liquid-background"
+import { APP_URL } from "@/lib/config"
 
 const avatars = [
   { imageUrl: "https://i.pravatar.cc/80?u=1", profileUrl: "#" },
@@ -69,7 +70,7 @@ export function Hero() {
 
         <div className="flex items-center gap-4">
           <Link
-            href={process.env.NEXT_PUBLIC_APP_URL || "http://localhost:5173"}
+            href={APP_URL}
             onClick={() => posthog.capture("hero_cta_clicked", { location: "hero" })}
           >
             <ShimmerButton className="gap-2">

@@ -9,8 +9,7 @@ import { useState } from "react"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import posthog from "posthog-js"
 
-const APP_URL = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:5173"
-const DISCORD_URL = process.env.NEXT_PUBLIC_DISCORD_URL || "https://discord.gg/sleepcomet"
+import { APP_URL, DISCORD_URL } from "@/lib/config"
 
 const plans = [
   {

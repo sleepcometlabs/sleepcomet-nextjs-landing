@@ -5,7 +5,9 @@ import { BreadcrumbList } from "@/components/seo/breadcrumb-list"
 import { HowToSchema } from "@/components/seo/how-to-schema"
 import { ClipagemIACta } from "./clipagem-ia-cta"
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
+import { APP_URL, SITE_URL } from "@/lib/config"
+
+const siteUrl = SITE_URL
 
 export const metadata: Metadata = {
   title: "Clipagem com IA — Cortar Vídeo Automaticamente com Inteligência Artificial",
@@ -179,7 +181,7 @@ export default function ClipagemIA() {
         <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
           Cole um link do YouTube e veja a mágica acontecer. Comece grátis, sem cartão de crédito.
         </p>
-        <ClipagemIACta appUrl={process.env.NEXT_PUBLIC_APP_URL || "http://localhost:5173"} />
+        <ClipagemIACta appUrl={APP_URL} />
       </Section>
     </div>
   )
