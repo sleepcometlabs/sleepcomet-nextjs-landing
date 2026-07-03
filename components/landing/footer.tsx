@@ -28,6 +28,7 @@ const legalLinks = [
   { label: "Privacidade", href: "/privacidade" },
   { label: "Termos", href: "/termos" },
   { label: "Cookies", href: "/cookies" },
+  { label: "Exclusão de Dados", href: "/exclusao-de-dados" },
   { label: "Licenças", href: "/licencas" },
 ]
 
