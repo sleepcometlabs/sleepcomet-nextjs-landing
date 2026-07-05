@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import posthog from "posthog-js"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardTitle } from "@/components/ui/card"
 import { Section } from "@/components/ui/section"
@@ -47,7 +46,6 @@ export function ContactContent() {
     const form = e.currentTarget
     const formData = new FormData(form)
     const subject = formData.get("assunto") as string
-    posthog.capture("contact_form_submitted", { subject })
 
     setSending(true)
     try {
@@ -66,7 +64,7 @@ export function ContactContent() {
         form.reset()
       }
     } catch {
-      // fallback: form submit tracks via posthog
+      // falha silenciosa; usuário pode tentar novamente
     } finally {
       setSending(false)
     }
@@ -84,11 +82,6 @@ export function ContactContent() {
                 <a
                   href={`mailto:${method.email}`}
                   className="mt-3 inline-block text-sm font-medium text-primary underline underline-offset-4 hover:no-underline"
-                  onClick={() =>
-                    posthog.capture("contact_email_clicked", {
-                      department: method.title,
-                    })
-                  }
                 >
                   {method.email}
                 </a>
@@ -107,14 +100,7 @@ export function ContactContent() {
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             {socialLinks.map((link) => (
               <Button key={link.name} variant="outline" size="sm" asChild>
-                <a
-                  href={link.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() =>
-                    posthog.capture("contact_social_clicked", { platform: link.name, url: link.url })
-                  }
-                >
+                <a href={link.url} target="_blank" rel="noopener noreferrer">
                   {link.name}
                 </a>
               </Button>

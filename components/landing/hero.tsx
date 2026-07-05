@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-import posthog from "posthog-js"
 
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text"
 import { AvatarCircles } from "@/components/ui/avatar-circles"
@@ -69,10 +68,7 @@ export function Hero() {
         </p>
 
         <div className="flex items-center gap-4">
-          <Link
-            href={APP_URL}
-            onClick={() => posthog.capture("hero_cta_clicked", { location: "hero" })}
-          >
+          <Link href={APP_URL}>
             <ShimmerButton className="gap-2">
               Começar grátis
               <ArrowRight className="size-4" />

@@ -7,7 +7,6 @@ import { cn } from "@/lib/utils"
 import { ArrowRight, BadgeCheck, Zap } from "lucide-react"
 import { useState } from "react"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
-import posthog from "posthog-js"
 
 import { APP_URL, DISCORD_URL } from "@/lib/config"
 
@@ -123,13 +122,7 @@ export function Pricing() {
         <p className="mx-auto max-w-2xl text-balance text-lg text-muted-foreground">
           Comece grátis e escale conforme cresce. Planos para criadores independentes, profissionais e agências.
         </p>
-        <Tabs
-          defaultValue={frequency}
-          onValueChange={(value) => {
-            setFrequency(value)
-            posthog.capture("pricing_frequency_changed", { billing_period: value })
-          }}
-        >
+        <Tabs defaultValue={frequency} onValueChange={setFrequency}>
           <TabsList>
             <TabsTrigger value="monthly">Mensal</TabsTrigger>
             <TabsTrigger value="yearly">
@@ -183,13 +176,6 @@ export function Pricing() {
                   (plan.id === "free" || plan.id === "enterprise")
                     ? plan.href
                     : `${APP_URL}/checkout?plan=${plan.id}&frequency=${frequency}`
-                }
-                onClick={() =>
-                  posthog.capture("pricing_plan_clicked", {
-                    plan: plan.id,
-                    plan_name: plan.name,
-                    billing_period: frequency,
-                  })
                 }
               >
                 <Button

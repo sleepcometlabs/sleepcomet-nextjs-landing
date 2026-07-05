@@ -69,12 +69,6 @@ const licenses = [
     license: "MIT",
     repo: "github.com/OpenNMT/CTranslate2",
   },
-  {
-    name: "PostHog",
-    description: "Plataforma de analytics de produto auto-hospedável.",
-    license: "MIT",
-    repo: "github.com/PostHog/posthog",
-  },
 ]
 
 export default function Licencas() {

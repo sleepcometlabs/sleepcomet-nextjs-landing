@@ -5,7 +5,6 @@ import Image from "next/image"
 import {
   ArrowUpRight,
 } from "lucide-react"
-import posthog from "posthog-js"
 
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
@@ -64,7 +63,6 @@ export function Footer() {
                 rel="noopener noreferrer"
                 aria-label="X (Twitter)"
                 className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
-                onClick={() => posthog.capture("footer_social_clicked", { platform: "Twitter/X" })}
               >
                 <FaXTwitter className="size-4" />
               </Link>
@@ -75,7 +73,6 @@ export function Footer() {
                 rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
-                onClick={() => posthog.capture("footer_social_clicked", { platform: "Instagram" })}
               >
                 <FaInstagram className="size-4" />
               </Link>
@@ -86,7 +83,6 @@ export function Footer() {
                 rel="noopener noreferrer"
                 aria-label="YouTube"
                 className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
-                onClick={() => posthog.capture("footer_social_clicked", { platform: "YouTube" })}
               >
                 <FaYoutube className="size-4" />
               </Link>
@@ -97,7 +93,6 @@ export function Footer() {
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
                 className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
-                onClick={() => posthog.capture("footer_social_clicked", { platform: "LinkedIn" })}
               >
                 <FaLinkedin className="size-4" />
               </Link>
@@ -108,7 +103,6 @@ export function Footer() {
                 rel="noopener noreferrer"
                 aria-label="GitHub"
                 className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
-                onClick={() => posthog.capture("footer_social_clicked", { platform: "GitHub" })}
               >
                 <FaGithub className="size-4" />
               </Link>

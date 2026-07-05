@@ -46,7 +46,7 @@ const sections = [
         <p className="mb-2">Utilizamos ferramentas de análise para entender como você interage com a plataforma.</p>
         <ul className="list-disc pl-5 space-y-1">
           <li>Google Analytics (IP anonimizado) — 2 anos.</li>
-          <li>PostHog (auto-hospedado, dados não compartilhados) — 1 ano.</li>
+          <li>Microsoft Clarity (análise de comportamento e mapas de calor) — 1 ano.</li>
         </ul>
 
         <h3 className="text-base font-semibold mt-6 mb-2">2.4 Cookies de marketing</h3>

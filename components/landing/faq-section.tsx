@@ -1,6 +1,5 @@
 "use client"
 
-import posthog from "posthog-js"
 import {
   Accordion,
   AccordionContent,
@@ -74,17 +73,7 @@ export function FAQSection() {
           </p>
         </div>
 
-        <Accordion
-          type="single"
-          collapsible
-          className="w-full"
-          onValueChange={(value) => {
-            if (value) {
-              const index = parseInt(value.replace("item-", ""), 10)
-              posthog.capture("faq_item_expanded", { question: faqs[index]?.q })
-            }
-          }}
-        >
+        <Accordion type="single" collapsible className="w-full">
           {faqs.map((faq, i) => (
             <AccordionItem value={`item-${i}`} key={i}>
               <AccordionTrigger className="text-left text-base">

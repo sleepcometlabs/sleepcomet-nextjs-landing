@@ -2,7 +2,6 @@
 
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
-import posthog from "posthog-js"
 import { ShimmerButton } from "@/components/ui/shimmer-button"
 
 export function Cta() {
@@ -15,7 +14,7 @@ export function Cta() {
         <p className="max-w-md text-muted-foreground">
           Crie clipes virais para TikTok, Reels e Shorts em segundos. Plano grátis disponível, sem cartão de crédito.
         </p>
-        <Link href="/precos" onClick={() => posthog.capture("cta_clicked", { location: "bottom_cta" })}>
+        <Link href="/precos">
           <ShimmerButton className="gap-2">
             Ver planos <ArrowRight className="size-4" />
           </ShimmerButton>

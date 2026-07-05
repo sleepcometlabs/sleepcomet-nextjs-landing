@@ -5,7 +5,6 @@ import { ChevronDown, Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useState, useRef, useEffect } from "react"
-import posthog from "posthog-js"
 import { APP_URL } from "@/lib/config"
 
 const navItems = [
@@ -114,7 +113,6 @@ export function Navbar() {
             <Link
               href={APP_URL}
               className="hidden text-sm text-muted-foreground transition-colors hover:text-foreground md:block"
-              onClick={() => posthog.capture("login_clicked", { location: "navbar" })}
             >
               Entrar
             </Link>
@@ -165,10 +163,7 @@ export function Navbar() {
               <hr className="my-2 border-border/50" />
               <Link
                 href={APP_URL}
-                onClick={() => {
-                  setOpen(false)
-                  posthog.capture("login_clicked", { location: "mobile_navbar" })
-                }}
+                onClick={() => setOpen(false)}
                 className="rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
               >
                 Entrar
