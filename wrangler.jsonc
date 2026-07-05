@@ -4,6 +4,9 @@
   "compatibility_date": "2026-06-17",
   "pages_build_output_dir": "out",
   "vars": {
+    "NEXT_PUBLIC_SITE_URL": "https://sleepcomet.com",
+    "NEXT_PUBLIC_APP_URL": "https://app.sleepcomet.com",
+    "NEXT_PUBLIC_DISCORD_URL": "https://discord.gg/sleepcomet",
     "NEXT_PUBLIC_GA_MEASUREMENT_ID": "G-E03VC57TP0",
     "NEXT_PUBLIC_CLARITY_PROJECT_ID": "umgm0n2q02"
   }
