@@ -224,6 +224,20 @@ export default function RootLayout({
               data-blockingmode="auto"
               strategy="lazyOnload"
             />
+            <Script
+              id="plausible-init"
+              strategy="afterInteractive"
+              dangerouslySetInnerHTML={{
+                __html: `window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`,
+              }}
+            />
+            <Script
+              id="plausible-src"
+              defer
+              data-domain="sleepcomet.com"
+              src="https://plausible.sleepcomet.com/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
+              strategy="afterInteractive"
+            />
             {process.env.NEXT_PUBLIC_GTM_ID && (
               <Script
                 id="gtm"
@@ -266,31 +280,6 @@ export default function RootLayout({
                   `,
                 }}
               />
-            )}
-            {process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID && (
-              <>
-                <Script
-                  id="openpanel-init"
-                  strategy="afterInteractive"
-                  dangerouslySetInnerHTML={{
-                    __html: `
-                      window.op=window.op||function(){var n=[];return new Proxy(function(){arguments.length&&n.push([].slice.call(arguments))},{get:function(t,r){return"q"===r?n:function(){n.push([r].concat([].slice.call(arguments)))}} ,has:function(t,r){return"q"===r}}) }();
-                      window.op('init', {
-                        apiUrl: '${process.env.NEXT_PUBLIC_OPENPANEL_API_URL}',
-                        clientId: '${process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID}',
-                        trackScreenViews: true,
-                        trackOutgoingLinks: true,
-                        trackAttributes: true,
-                      });
-                    `,
-                  }}
-                />
-                <Script
-                  id="openpanel-src"
-                  src="https://openpanel.dev/op1.js"
-                  strategy="afterInteractive"
-                />
-              </>
             )}
             {process.env.NEXT_PUBLIC_META_PIXEL_ID && (
               <Script
