@@ -267,6 +267,31 @@ export default function RootLayout({
                 }}
               />
             )}
+            {process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID && (
+              <>
+                <Script
+                  id="openpanel-init"
+                  strategy="afterInteractive"
+                  dangerouslySetInnerHTML={{
+                    __html: `
+                      window.op=window.op||function(){var n=[];return new Proxy(function(){arguments.length&&n.push([].slice.call(arguments))},{get:function(t,r){return"q"===r?n:function(){n.push([r].concat([].slice.call(arguments)))}} ,has:function(t,r){return"q"===r}}) }();
+                      window.op('init', {
+                        apiUrl: '${process.env.NEXT_PUBLIC_OPENPANEL_API_URL}',
+                        clientId: '${process.env.NEXT_PUBLIC_OPENPANEL_CLIENT_ID}',
+                        trackScreenViews: true,
+                        trackOutgoingLinks: true,
+                        trackAttributes: true,
+                      });
+                    `,
+                  }}
+                />
+                <Script
+                  id="openpanel-src"
+                  src="https://openpanel.dev/op1.js"
+                  strategy="afterInteractive"
+                />
+              </>
+            )}
             {process.env.NEXT_PUBLIC_META_PIXEL_ID && (
               <Script
                 id="meta-pixel"

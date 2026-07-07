@@ -8,6 +8,8 @@
     "NEXT_PUBLIC_APP_URL": "https://app.sleepcomet.com",
     "NEXT_PUBLIC_DISCORD_URL": "https://discord.gg/sleepcomet",
     "NEXT_PUBLIC_GA_MEASUREMENT_ID": "G-E03VC57TP0",
-    "NEXT_PUBLIC_CLARITY_PROJECT_ID": "umgm0n2q02"
+    "NEXT_PUBLIC_CLARITY_PROJECT_ID": "umgm0n2q02",
+    "NEXT_PUBLIC_OPENPANEL_CLIENT_ID": "6f7b1725-b8a1-4c1a-ac4a-a2b7e0cfb61b",
+    "NEXT_PUBLIC_OPENPANEL_API_URL": "https://analytics.sleepcomet.com/api"
   }
 }
