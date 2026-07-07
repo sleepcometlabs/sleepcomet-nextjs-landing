@@ -235,7 +235,7 @@ export default function RootLayout({
               id="plausible-src"
               defer
               data-domain="sleepcomet.com"
-              src="https://plausible.sleepcomet.com/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
+              src="https://analytics.sleepcomet.com/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
               strategy="afterInteractive"
             />
             {process.env.NEXT_PUBLIC_GTM_ID && (
