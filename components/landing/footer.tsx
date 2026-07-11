@@ -46,7 +46,7 @@ export function Footer() {
               href="/"
               className="flex items-center gap-3"
             >
-              <Image src="/logo.png" alt="Sleepcomet" width={597} height={90} className="h-6 w-auto" />
+              <Image src="/logo.png" alt="Sleepcomet" width={319} height={259} className="h-6 w-auto" />
             </Link>
 
             <p className="mt-5 max-w-md text-sm leading-7 text-white/70">
