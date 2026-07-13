@@ -112,7 +112,7 @@ export function Footer() {
                 href="https://www.producthunt.com/products/sleepcomet-clipagem-automatica-com-ia?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-sleepcomet-clipagem-automatica-com-ia"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="ml-1 inline-block shrink-0"
+                className="ml-auto inline-block shrink-0"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
