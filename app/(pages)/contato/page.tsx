@@ -6,9 +6,9 @@ import { ContactContent } from "./contact-content"
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 
 export const metadata: Metadata = {
-  title: "Contato — Fale com o Sleepcomet",
+  title: "Contato — Fale com o SleepComet",
   description:
-    "Entre em contato com o Sleepcomet para suporte, parcerias, sugestões ou imprensa. Resposta em até 24 horas.",
+    "Entre em contato com o SleepComet para suporte, parcerias, sugestões ou imprensa. Resposta em até 24 horas.",
   keywords: [
     "contato sleepcomet",
     "suporte sleepcomet",
@@ -17,8 +17,8 @@ export const metadata: Metadata = {
     "parceria sleepcomet",
   ],
   openGraph: {
-    title: "Contato — Fale com o Sleepcomet",
-    description: "Fale com a equipe Sleepcomet. Estamos prontos para ajudar.",
+    title: "Contato — Fale com o SleepComet",
+    description: "Fale com a equipe SleepComet. Estamos prontos para ajudar.",
     url: `${siteUrl}/contato/`,
   },
   alternates: {

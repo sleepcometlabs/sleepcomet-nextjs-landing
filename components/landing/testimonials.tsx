@@ -12,7 +12,7 @@ const avatars = [
 const testimonials = [
   {
     quote:
-      "Eu passava horas editando clipes manualmente. O Sleepcomet faz em 2 minutos o que eu levava uma tarde inteira.",
+      "Eu passava horas editando clipes manualmente. O SleepComet faz em 2 minutos o que eu levava uma tarde inteira.",
     author: "Ana Clara",
     role: "Criadora de conteúdo · 500K seguidores",
   },

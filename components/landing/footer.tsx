@@ -47,7 +47,7 @@ export function Footer() {
               href="/"
               className="flex items-center gap-3"
             >
-              <Image src="/logo.png" alt="Sleepcomet" width={319} height={259} className="h-6 w-auto" />
+              <Image src="/logo.png" alt="SleepComet" width={319} height={259} className="h-6 w-auto" />
             </Link>
 
             <p className="mt-5 max-w-md text-sm leading-7 text-white/70">
@@ -189,7 +189,7 @@ export function Footer() {
           <StatusIndicator />
 
           <p className="text-xs text-white/80">
-            © 2026 Sleepcomet. Todos os direitos reservados.
+            © 2026 SleepComet. Todos os direitos reservados.
           </p>
         </div>
       </div>

@@ -3,7 +3,7 @@ import { Section } from "@/components/ui/section"
 
 export const metadata: Metadata = {
   title: "Exclusão de Dados",
-  description: "Como solicitar a exclusão dos seus dados pessoais e das conexões com redes sociais no Sleepcomet.",
+  description: "Como solicitar a exclusão dos seus dados pessoais e das conexões com redes sociais no SleepComet.",
   robots: { index: false },
 }
 
@@ -42,10 +42,10 @@ const sections = [
             com o assunto "Exclusão de dados", a partir do e-mail cadastrado na sua conta.
           </li>
           <li>
-            Se você conectou sua conta do Sleepcomet através do TikTok, Google ou Meta
-            (Instagram/Facebook), você também pode revogar o acesso do Sleepcomet diretamente nas
+            Se você conectou sua conta do SleepComet através do TikTok, Google ou Meta
+            (Instagram/Facebook), você também pode revogar o acesso do SleepComet diretamente nas
             configurações de aplicativos conectados dessas plataformas — isso desconecta a
-            integração, mas não apaga automaticamente sua conta e seus dados no Sleepcomet. Para
+            integração, mas não apaga automaticamente sua conta e seus dados no SleepComet. Para
             excluir sua conta por completo, use o e-mail acima.
           </li>
         </ul>

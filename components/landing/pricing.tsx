@@ -24,7 +24,7 @@ const plans = [
       "Clipes de até 60 segundos",
       "Exportação em 720p",
       "Até 5 clipes por mês",
-      "Marca d'água Sleepcomet",
+      "Marca d'água SleepComet",
       "Modelos de legendas básicos",
       "Fila geral de processamento",
       "1 GB de armazenamento",

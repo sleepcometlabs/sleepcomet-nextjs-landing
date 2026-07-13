@@ -3,7 +3,7 @@ import { Section } from "@/components/ui/section"
 
 export const metadata: Metadata = {
   title: "Política de Cookies",
-  description: "Política de cookies do Sleepcomet. Saiba como utilizamos cookies e tecnologias similares para melhorar sua experiência.",
+  description: "Política de cookies do SleepComet. Saiba como utilizamos cookies e tecnologias similares para melhorar sua experiência.",
   robots: { index: false },
 }
 
@@ -18,7 +18,7 @@ const sections = [
           forneça funcionalidades personalizadas.
         </p>
         <p>
-          Esta Política de Cookies explica quais cookies utilizamos no Sleepcomet, para quais
+          Esta Política de Cookies explica quais cookies utilizamos no SleepComet, para quais
           finalidades e como você pode gerenciá-los.
         </p>
       </>
@@ -63,7 +63,7 @@ const sections = [
     content: (
       <>
         <p>
-          Ao acessar o Sleepcomet pela primeira vez, você verá um banner de consentimento onde pode
+          Ao acessar o SleepComet pela primeira vez, você verá um banner de consentimento onde pode
           aceitar, rejeitar ou personalizar suas preferências de cookies.
         </p>
         <p>

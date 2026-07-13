@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     "transcrição com Whisper",
   ],
   openGraph: {
-    title: "Como Funciona — Cortar Vídeo com IA em 3 Passos | Sleepcomet",
+    title: "Como Funciona — Cortar Vídeo com IA em 3 Passos | SleepComet",
     description:
       "Faça upload, a IA analisa o conteúdo e gera clipes prontos. Transcrição, detecção de cenas e exportação automatizados.",
     url: `${siteUrl}/como-funciona/`,
@@ -37,7 +37,7 @@ const steps = [
     number: "01",
     title: "Faça upload ou cole um link",
     description:
-      "Envie seu vídeo em MP4, MOV ou cole um link do YouTube. O Sleepcomet baixa o vídeo automaticamente via yt-dlp e inicia o processamento.",
+      "Envie seu vídeo em MP4, MOV ou cole um link do YouTube. O SleepComet baixa o vídeo automaticamente via yt-dlp e inicia o processamento.",
     gradient: "from-blue-500 to-cyan-400",
   },
   {
@@ -57,7 +57,7 @@ const steps = [
 ]
 
 const howToSteps = [
-  { name: "Faça upload ou cole um link", text: "Envie seu vídeo em MP4, MOV ou cole um link do YouTube. O Sleepcomet baixa o vídeo automaticamente." },
+  { name: "Faça upload ou cole um link", text: "Envie seu vídeo em MP4, MOV ou cole um link do YouTube. O SleepComet baixa o vídeo automaticamente." },
   { name: "Transcrição do áudio com IA", text: "O áudio é transcrito com Faster-Whisper em português com timestamps palavra por palavra." },
   { name: "Análise e detecção de cenas", text: "A transcrição é analisada por palavras-chave e o OpenCV detecta mudanças de cena automaticamente." },
   { name: "Seleção dos melhores momentos", text: "Até 10 clipes são selecionados combinando pontuação de viralidade, cenas e movimento." },

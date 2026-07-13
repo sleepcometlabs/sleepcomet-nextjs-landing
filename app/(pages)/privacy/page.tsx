@@ -3,7 +3,7 @@ import { Section } from "@/components/ui/section"
 
 export const metadata: Metadata = {
   title: "Política de Privacidade",
-  description: "Política de privacidade do Sleepcomet. Saiba como coletamos, usamos e protegemos seus dados pessoais.",
+  description: "Política de privacidade do SleepComet. Saiba como coletamos, usamos e protegemos seus dados pessoais.",
   robots: { index: false },
 }
 
@@ -13,13 +13,13 @@ const sections = [
     content: (
       <>
         <p>
-          O Sleepcomet ("nós", "nosso" ou "plataforma") está comprometido com a proteção da sua
+          O SleepComet ("nós", "nosso" ou "plataforma") está comprometido com a proteção da sua
           privacidade. Esta Política de Privacidade descreve como coletamos, usamos, armazenamos e
           compartilhamos suas informações quando você utiliza nossos serviços de clipagem com
           inteligência artificial.
         </p>
         <p>
-          Ao usar o Sleepcomet, você concorda com as práticas descritas nesta política. Se você não
+          Ao usar o SleepComet, você concorda com as práticas descritas nesta política. Se você não
           concordar com algum termo, recomendamos que não utilize a plataforma.
         </p>
       </>

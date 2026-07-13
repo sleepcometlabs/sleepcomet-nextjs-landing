@@ -4,13 +4,13 @@ import { Section } from "@/components/ui/section"
 export const metadata: Metadata = {
   title: "Licenças",
   description:
-    "Licenças de software aberto utilizadas pelo Sleepcomet. Transparência sobre as bibliotecas e frameworks que utilizamos.",
+    "Licenças de software aberto utilizadas pelo SleepComet. Transparência sobre as bibliotecas e frameworks que utilizamos.",
   robots: { index: false },
 }
 
 const licenses = [
   {
-    name: "Sleepcomet",
+    name: "SleepComet",
     description: "Plataforma de clipagem com IA (Next.js, React, Go, Python).",
     license: "MIT",
     repo: "github.com/sleepcomet-com",
@@ -78,7 +78,7 @@ export default function Licencas() {
         <div className="mx-auto max-w-4xl">
           <h1 className="mb-2 text-center text-4xl font-bold tracking-tight">Licenças</h1>
           <p className="mx-auto mb-12 max-w-xl text-center text-muted-foreground">
-            O Sleepcomet é construído sobre os ombros de gigantes. Abaixo estão as licenças das
+            O SleepComet é construído sobre os ombros de gigantes. Abaixo estão as licenças das
             principais bibliotecas e ferramentas que utilizamos.
           </p>
 
@@ -121,7 +121,7 @@ export default function Licencas() {
           <div className="mt-10 rounded-xl border bg-card p-6 text-center">
             <h2 className="text-lg font-semibold">Código aberto</h2>
             <p className="mt-2 text-sm text-muted-foreground">
-              Parte do Sleepcomet é open source. Contribuímos ativamente com a comunidade de
+              Parte do SleepComet é open source. Contribuímos ativamente com a comunidade de
               código aberto e acreditamos na transparência como valor fundamental.
             </p>
             <a

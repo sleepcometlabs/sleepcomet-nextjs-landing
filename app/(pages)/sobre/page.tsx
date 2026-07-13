@@ -6,9 +6,9 @@ import { BreadcrumbList } from "@/components/seo/breadcrumb-list"
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 
 export const metadata: Metadata = {
-  title: "Sobre o Sleepcomet — Plataforma de Clipagem com Inteligência Artificial",
+  title: "Sobre o SleepComet — Plataforma de Clipagem com Inteligência Artificial",
   description:
-    "Conheça o Sleepcomet, a plataforma de clipagem com IA. Nossa missão é eliminar o trabalho repetitivo da edição de vídeo para que criadores de conteúdo foquem no que importa: criar e crescer.",
+    "Conheça o SleepComet, a plataforma de clipagem com IA. Nossa missão é eliminar o trabalho repetitivo da edição de vídeo para que criadores de conteúdo foquem no que importa: criar e crescer.",
   keywords: [
     "sobre o sleepcomet",
     "plataforma de clipagem com IA",
@@ -17,9 +17,9 @@ export const metadata: Metadata = {
     "missão do sleepcomet",
   ],
   openGraph: {
-    title: "Sobre o Sleepcomet — Clipagem com IA | Sleepcomet",
+    title: "Sobre o SleepComet — Clipagem com IA | SleepComet",
     description:
-      "Sleepcomet é uma plataforma que usa inteligência artificial para criar clipes virais automaticamente em segundos.",
+      "SleepComet é uma plataforma que usa inteligência artificial para criar clipes virais automaticamente em segundos.",
     url: `${siteUrl}/sobre/`,
   },
   alternates: {
@@ -54,7 +54,7 @@ export default function Sobre() {
           <BreadcrumbList items={[{ name: "Sobre", url: `${siteUrl}/sobre/` }]} />
           <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
             Sobre o{" "}
-            <span className="text-primary">Sleepcomet</span>
+            <span className="text-primary">SleepComet</span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
             Transformando a maneira como criadores de conteúdo produzem clipes virais.
@@ -66,7 +66,7 @@ export default function Sobre() {
         <div className="mx-auto max-w-3xl space-y-6 text-center">
           <h2 className="text-3xl font-bold">Nossa missão</h2>
           <p className="text-lg leading-relaxed text-muted-foreground">
-            No Sleepcomet, acreditamos que todo criador de conteúdo merece ferramentas que
+            No SleepComet, acreditamos que todo criador de conteúdo merece ferramentas que
             potencializem seu trabalho, não que roubem seu tempo. Nossa missão é eliminar o trabalho
             braçal da edição de vídeo — assistir horas de gravação, cortar manualmente, sincronizar
             legendas — para que você possa se dedicar ao que realmente importa: criar, conectar e
@@ -98,9 +98,9 @@ export default function Sobre() {
 
       <Section className="text-center">
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-2xl font-bold">Sleepcomet no GitHub</h2>
+          <h2 className="text-2xl font-bold">SleepComet no GitHub</h2>
           <p className="mt-3 text-muted-foreground">
-            Acompanhe o desenvolvimento e as novidades do Sleepcomet no GitHub.
+            Acompanhe o desenvolvimento e as novidades do SleepComet no GitHub.
           </p>
           <Button size="lg" className="mt-8" asChild>
             <a
