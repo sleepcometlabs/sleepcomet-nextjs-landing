@@ -58,7 +58,7 @@ const sections = [
       <p>
         Confirmamos o recebimento do seu pedido em até 48 horas e concluímos a exclusão em até 30
         dias corridos, conforme previsto na nossa{" "}
-        <a href="/privacidade" className="text-primary underline underline-offset-4 hover:no-underline">
+        <a href="/privacy" className="text-primary underline underline-offset-4 hover:no-underline">
           Política de Privacidade
         </a>
         . Dados que precisamos manter por obrigação legal ou fiscal (ex: registros de cobrança) são

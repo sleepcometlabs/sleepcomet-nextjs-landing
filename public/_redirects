@@ -1,8 +1,12 @@
+# /privacidade virou /privacy (13/jul/2026, pra forçar o Google a revalidar
+# a URL cadastrada na tela de permissão OAuth). 301 preserva links antigos.
+/privacidade /privacy 301
+
 # Páginas legais servidas com 200 direto também SEM a barra final — o
 # verificador do Google (OAuth/Play) reprova URL de política de privacidade
-# que responde com redirect (o export estático do Next gera /privacidade/
-# e o Pages devolvia 308 na versão sem barra).
-/privacidade /privacidade/ 200
+# que responde com redirect (o export estático do Next gera /privacy/ e o
+# Pages devolvia 308 na versão sem barra).
+/privacy /privacy/ 200
 /termos /termos/ 200
 /exclusao-de-dados /exclusao-de-dados/ 200
 /cookies /cookies/ 200
