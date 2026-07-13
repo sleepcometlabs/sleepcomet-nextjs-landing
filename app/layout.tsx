@@ -3,6 +3,7 @@ import { Geist } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import Script from "next/script"
+import { ScAnalytics } from "@/components/sc-analytics"
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 
@@ -215,6 +216,7 @@ export default function RootLayout({
       </head>
       <body className="flex min-h-full flex-col bg-background text-foreground">
         {children}
+        <ScAnalytics />
         {process.env.NODE_ENV === "production" && (
           <>
             <Script
