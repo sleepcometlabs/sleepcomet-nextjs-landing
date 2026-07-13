@@ -48,7 +48,13 @@ export function StickyUrlBar() {
   return (
     <div
       ref={barRef}
-      className="fixed inset-x-0 bottom-4 z-50 flex justify-center px-4 sm:bottom-6"
+      // translate-y-[120%]/opacity-0/invisible como classes ESTÁTICAS (não só
+      // via gsap.set): o export estático do Next já manda esse HTML pronto
+      // pro navegador, que pinta a marcação crua antes de qualquer JS rodar
+      // — sem essas classes, esse primeiro paint mostraria a barra visível
+      // por um instante, e nem useLayoutEffect evita isso (ele só roda
+      // depois da hidratação, que já é tarde demais pro paint inicial).
+      className="fixed inset-x-0 bottom-4 z-50 flex translate-y-[120%] justify-center px-4 opacity-0 invisible sm:bottom-6"
     >
       <UrlCapturePill size="compact" />
     </div>
