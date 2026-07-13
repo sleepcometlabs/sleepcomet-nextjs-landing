@@ -47,7 +47,7 @@ export function Footer() {
               href="/"
               className="flex items-center gap-3"
             >
-              <Image src="/logo.png" alt="SleepComet" width={319} height={259} className="h-6 w-auto" />
+              <Image src="/logo.png" alt="Sleepcomet" width={319} height={259} className="h-6 w-auto" />
             </Link>
 
             <p className="mt-5 max-w-md text-sm leading-7 text-white/70">
@@ -117,7 +117,7 @@ export function Footer() {
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
                   src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1195589&theme=dark"
-                  alt="SleepComet — Clipagem Automática com IA - Turn long videos into viral clips with AI | Product Hunt"
+                  alt="Sleepcomet — Clipagem Automática com IA - Turn long videos into viral clips with AI | Product Hunt"
                   width={150}
                   height={32}
                   className="h-8 w-auto"
@@ -205,7 +205,7 @@ export function Footer() {
           <StatusIndicator />
 
           <p className="text-xs text-white/80">
-            © 2026 SleepComet. Todos os direitos reservados.
+            © 2026 Sleepcomet. Todos os direitos reservados.
           </p>
         </div>
       </div>

@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     "detecção de cenas automática",
   ],
   openGraph: {
-    title: "Clipagem com IA — Cortar Vídeo Automaticamente | SleepComet",
+    title: "Clipagem com IA — Cortar Vídeo Automaticamente | Sleepcomet",
     description:
       "Transforme vídeos longos em clipes virais automaticamente com inteligência artificial. Transcrição, detecção de cenas e seleção dos melhores momentos.",
     url: `${siteUrl}/clipagem-ia/`,
@@ -75,7 +75,7 @@ const features = [
 ]
 
 const howToSteps = [
-  { name: "Faça upload ou cole um link", text: "Envie seu vídeo em MP4, MOV ou cole um link do YouTube. O SleepComet baixa o vídeo automaticamente via yt-dlp e inicia o processamento." },
+  { name: "Faça upload ou cole um link", text: "Envie seu vídeo em MP4, MOV ou cole um link do YouTube. O Sleepcomet baixa o vídeo automaticamente via yt-dlp e inicia o processamento." },
   { name: "Transcrição do áudio com IA", text: "O áudio é transcrito com Faster-Whisper em português. Cada palavra recebe um timestamp preciso, permitindo sincronia exata entre fala e legenda." },
   { name: "Análise e detecção de cenas", text: "A transcrição é analisada por palavras-chave de hook, emoção e contraste. Simultaneamente, o OpenCV detecta mudanças de cena e picos de movimento." },
   { name: "Seleção dos melhores momentos", text: "Combinamos pontuação por palavras-chave, posição das cenas e intensidade de movimento para selecionar até 10 clipes de 15 a 60 segundos cada." },
@@ -87,7 +87,7 @@ export default function ClipagemIA() {
     <div className="pt-20">
       <HowToSchema
         name="Como fazer clipagem de vídeo com IA"
-        description="Passo a passo para cortar vídeos automaticamente usando inteligência artificial com o SleepComet."
+        description="Passo a passo para cortar vídeos automaticamente usando inteligência artificial com o Sleepcomet."
         steps={howToSteps}
         totalTime="PT5M"
       />

@@ -8,11 +8,11 @@ import { ScAnalytics } from "@/components/sc-analytics"
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
-const siteName = "SleepComet — Clipagem Automática com IA"
+const siteName = "Sleepcomet — Clipagem Automática com IA"
 const titleDefault =
   "Sleepcomet - Cortar Vídeo com IA — Clipagem Automática para TikTok, Reels e Shorts"
 const descriptionDefault =
-  "Corte vídeos automaticamente com inteligência artificial. O SleepComet analisa seu vídeo, encontra os melhores momentos e gera clipes prontos para TikTok, Instagram Reels e YouTube Shorts em segundos. Comece grátis sem cartão de crédito."
+  "Corte vídeos automaticamente com inteligência artificial. O Sleepcomet analisa seu vídeo, encontra os melhores momentos e gera clipes prontos para TikTok, Instagram Reels e YouTube Shorts em segundos. Comece grátis sem cartão de crédito."
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
     default: titleDefault,
-    template: "%s | SleepComet",
+    template: "%s | Sleepcomet",
   },
   description: descriptionDefault,
   keywords: [
@@ -56,9 +56,9 @@ export const metadata: Metadata = {
     "extrair melhores momentos do vídeo",
     "sleepcomet",
   ],
-  authors: [{ name: "SleepComet", url: siteUrl }],
-  creator: "SleepComet",
-  publisher: "SleepComet",
+  authors: [{ name: "Sleepcomet", url: siteUrl }],
+  creator: "Sleepcomet",
+  publisher: "Sleepcomet",
   formatDetection: {
     telephone: false,
     address: false,
@@ -82,7 +82,7 @@ export const metadata: Metadata = {
         url: `${siteUrl}/logo.png`,
         width: 1200,
         height: 630,
-        alt: "SleepComet — Cortar vídeo com IA e criar clipes automaticamente",
+        alt: "Sleepcomet — Cortar vídeo com IA e criar clipes automaticamente",
       },
     ],
   },
@@ -116,14 +116,14 @@ export const metadata: Metadata = {
     "mobile-web-app-capable": "yes",
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
-    "apple-mobile-web-app-title": "SleepComet",
+    "apple-mobile-web-app-title": "Sleepcomet",
   },
 }
 
 const jsonLdOrganization = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "SleepComet",
+  name: "Sleepcomet",
   url: siteUrl,
   logo: `${siteUrl}/logo.png`,
   description: "Plataforma de clipagem automática com inteligência artificial para criadores de conteúdo.",
@@ -148,7 +148,7 @@ const jsonLdWebsite = {
 const jsonLdSoftwareApp = {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
-  name: "SleepComet",
+  name: "Sleepcomet",
   applicationCategory: "MultimediaApplication",
   operatingSystem: "Web",
   description: descriptionDefault,

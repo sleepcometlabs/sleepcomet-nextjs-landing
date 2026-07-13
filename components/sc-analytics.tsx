@@ -1,6 +1,6 @@
 "use client"
 
-// Analytics primário da SleepComet: manda pageviews pro coletor /px do app
+// Analytics primário da Sleepcomet: manda pageviews pro coletor /px do app
 // (app.sleepcomet.com, Pages Function + D1) com geo do próprio Cloudflare.
 // O painel admin lê os agregados em /px-stats.
 //
@@ -35,7 +35,7 @@ function activateOptOutFromUrl() {
   const tenYears = 315360000
   document.cookie = `sc_nt=1; domain=.sleepcomet.com; path=/; max-age=${tenYears}; SameSite=Lax`
   document.cookie = `sc_nt=1; path=/; max-age=${tenYears}; SameSite=Lax`
-  window.alert("Pronto! Este navegador nunca mais será contado no analytics da SleepComet.")
+  window.alert("Pronto! Este navegador nunca mais será contado no analytics da Sleepcomet.")
 }
 
 export function ScAnalytics() {

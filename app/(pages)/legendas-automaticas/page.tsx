@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "legendas para YouTube Shorts",
   ],
   openGraph: {
-    title: "Legendas Automáticas — Transcrição com IA | SleepComet",
+    title: "Legendas Automáticas — Transcrição com IA | Sleepcomet",
     description:
       "Transcrição precisa em português com timestamps palavra por palavra. Legendas sincronizadas geradas automaticamente em cada clipe.",
     url: `${siteUrl}/legendas-automaticas/`,
@@ -184,7 +184,7 @@ export default function LegendasAutomaticas() {
             ))}
           </div>
           <p className="mt-6 text-center text-sm text-muted-foreground">
-            Atualmente o SleepComet suporta transcrição em português. A detecção de idioma é
+            Atualmente o Sleepcomet suporta transcrição em português. A detecção de idioma é
             configurada para português brasileiro.
           </p>
         </div>

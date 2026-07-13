@@ -94,7 +94,7 @@ export function ContactContent() {
         <div className="mx-auto max-w-2xl">
           <h2 className="text-center text-2xl font-bold">Redes sociais</h2>
           <p className="mt-2 text-center max-w-sm mx-auto text-muted-foreground">
-            Acompanhe o SleepComet nas redes para dicas, novidades e conteúdo exclusivo.
+            Acompanhe o Sleepcomet nas redes para dicas, novidades e conteúdo exclusivo.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             {socialLinks.map((link) => (

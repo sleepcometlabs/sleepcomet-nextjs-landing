@@ -9,12 +9,12 @@ import {
 
 const faqs = [
   {
-    q: "O que é o SleepComet?",
-    a: "SleepComet é uma ferramenta com inteligência artificial que analisa seus vídeos, identifica os melhores momentos e gera clipes prontos para publicar em redes sociais como TikTok, Instagram Reels, YouTube Shorts e Facebook.",
+    q: "O que é o Sleepcomet?",
+    a: "Sleepcomet é uma ferramenta com inteligência artificial que analisa seus vídeos, identifica os melhores momentos e gera clipes prontos para publicar em redes sociais como TikTok, Instagram Reels, YouTube Shorts e Facebook.",
   },
   {
     q: "Como cortar vídeo com inteligência artificial?",
-    a: "O SleepComet usa IA para transcrever o áudio, detectar mudanças de cena e pontuar os melhores momentos automaticamente. Você faz upload do vídeo e a plataforma gera clipes prontos em segundos.",
+    a: "O Sleepcomet usa IA para transcrever o áudio, detectar mudanças de cena e pontuar os melhores momentos automaticamente. Você faz upload do vídeo e a plataforma gera clipes prontos em segundos.",
   },
   {
     q: "Como a IA encontra os melhores momentos do vídeo?",
@@ -25,15 +25,15 @@ const faqs = [
     a: "Aceitamos MP4, MOV, AVI, WebM e outros formatos comuns. Os clipes são exportados em MP4 com resolução de até 4K, otimizados para cada plataforma.",
   },
   {
-    q: "Posso usar o SleepComet de graça?",
-    a: "Sim! O plano Free oferece 30 créditos por mês para você processar seus vídeos (1 crédito = 1 minuto de vídeo), com clipes de até 60 segundos, marca d'água SleepComet e acesso ao suporte da comunidade no Discord. Sem compromisso.",
+    q: "Posso usar o Sleepcomet de graça?",
+    a: "Sim! O plano Free oferece 30 créditos por mês para você processar seus vídeos (1 crédito = 1 minuto de vídeo), com clipes de até 60 segundos, marca d'água Sleepcomet e acesso ao suporte da comunidade no Discord. Sem compromisso.",
   },
   {
     q: "Quanto tempo leva para processar um vídeo?",
     a: "O processamento leva em média 30 segundos para cada minuto de vídeo. Vídeos mais longos podem demorar um pouco mais.",
   },
   {
-    q: "O SleepComet adiciona marca d'água?",
+    q: "O Sleepcomet adiciona marca d'água?",
     a: "Apenas no plano Free. Nos planos Creator, Pro e Enterprise todos os clipes saem sem marca d'água.",
   },
   {
@@ -69,7 +69,7 @@ export function FAQSection() {
             Perguntas frequentes
           </h2>
           <p className="text-muted-foreground">
-            Tudo que você precisa saber sobre o SleepComet.
+            Tudo que você precisa saber sobre o Sleepcomet.
           </p>
         </div>
 

@@ -7,7 +7,7 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 export const metadata: Metadata = {
   title: "Preços — Planos de Clipagem com IA a partir de $0 (Grátis)",
   description:
-    "Planos do SleepComet para criar clipes com IA. Comece grátis sem cartão de crédito. Creator a partir de $19/mês, Pro a partir de $39/mês. Compare planos e economize 20% no anual.",
+    "Planos do Sleepcomet para criar clipes com IA. Comece grátis sem cartão de crédito. Creator a partir de $19/mês, Pro a partir de $39/mês. Compare planos e economize 20% no anual.",
   keywords: [
     "preço clipagem com IA",
     "planos de clipagem automática",
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "assinar clipagem com IA",
   ],
   openGraph: {
-    title: "Preços — Planos de Clipagem com IA a partir de $0 | SleepComet",
+    title: "Preços — Planos de Clipagem com IA a partir de $0 | Sleepcomet",
     description:
       "Planos acessíveis para criadores. Comece grátis, cancele quando quiser. Economize 20% no plano anual.",
     url: `${siteUrl}/precos/`,
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  name: "Planos do SleepComet",
+  name: "Planos do Sleepcomet",
   description: "Planos de assinatura para clipagem automática com inteligência artificial.",
   itemListElement: [
     {
@@ -40,7 +40,7 @@ const productSchema = {
       position: 1,
       item: {
         "@type": "Product",
-        name: "SleepComet Free",
+        name: "Sleepcomet Free",
         description: "Plano gratuito com 30 créditos por mês, clipes de até 60 segundos e marca d'água.",
         offers: {
           "@type": "Offer",
@@ -55,7 +55,7 @@ const productSchema = {
       position: 2,
       item: {
         "@type": "Product",
-        name: "SleepComet Creator",
+        name: "Sleepcomet Creator",
         description: "Plano para criadores com 300 créditos/mês, Full HD e sem marca d'água.",
         offers: {
           "@type": "Offer",
@@ -76,7 +76,7 @@ const productSchema = {
       position: 3,
       item: {
         "@type": "Product",
-        name: "SleepComet Pro",
+        name: "Sleepcomet Pro",
         description: "Plano profissional com 1.000 créditos/mês, 4K, GPU dedicada e suporte prioritário.",
         offers: {
           "@type": "Offer",

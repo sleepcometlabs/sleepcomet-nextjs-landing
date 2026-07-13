@@ -7,9 +7,9 @@ import { BreadcrumbList } from "@/components/seo/breadcrumb-list"
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 
 export const metadata: Metadata = {
-  title: "Roadmap — Novas Funcionalidades e Atualizações do SleepComet",
+  title: "Roadmap — Novas Funcionalidades e Atualizações do Sleepcomet",
   description:
-    "Veja o que já foi lançado, o que estamos construindo agora e as próximas funcionalidades do SleepComet. Editor de vídeo integrado, suporte a podcasts, app mobile e mais.",
+    "Veja o que já foi lançado, o que estamos construindo agora e as próximas funcionalidades do Sleepcomet. Editor de vídeo integrado, suporte a podcasts, app mobile e mais.",
   keywords: [
     "roadmap sleepcomet",
     "novas funcionalidades sleepcomet",
@@ -19,9 +19,9 @@ export const metadata: Metadata = {
     "app mobile clipagem IA",
   ],
   openGraph: {
-    title: "Roadmap — Novas Funcionalidades do SleepComet",
+    title: "Roadmap — Novas Funcionalidades do Sleepcomet",
     description:
-      "Acompanhe a evolução do SleepComet. Funcionalidades passadas, presentes e futuras.",
+      "Acompanhe a evolução do Sleepcomet. Funcionalidades passadas, presentes e futuras.",
     url: `${siteUrl}/roadmap/`,
   },
   alternates: {
@@ -34,7 +34,7 @@ const timeline = [
     period: "Q1 2026",
     title: "Fundação",
     items: [
-      { name: "MVP do SleepComet", status: "done" },
+      { name: "MVP do Sleepcomet", status: "done" },
       { name: "Clipagem básica com IA", status: "done" },
       { name: "Upload de vídeos MP4/MOV", status: "done" },
       { name: "Exportação MP4 sem marca d'água", status: "done" },
@@ -93,7 +93,7 @@ const timeline = [
       { name: "Marketplace de templates da comunidade", status: "planned" },
       { name: "Análise preditiva de viralidade", status: "planned" },
       { name: "Integração com principais CRMs de creators", status: "planned" },
-      { name: "SleepComet como plataforma white-label", status: "planned" },
+      { name: "Sleepcomet como plataforma white-label", status: "planned" },
     ],
   },
 ]
@@ -112,7 +112,7 @@ export default function Roadmap() {
           <BreadcrumbList items={[{ name: "Roadmap", url: `${siteUrl}/roadmap/` }]} />
           <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">Roadmap</h1>
           <p className="mx-auto mt-4 max-w-md text-lg text-muted-foreground">
-            Acompanhe a evolução do SleepComet. Do MVP ao futuro da criação de conteúdo com IA.
+            Acompanhe a evolução do Sleepcomet. Do MVP ao futuro da criação de conteúdo com IA.
           </p>
         </div>
       </Section>
@@ -161,7 +161,7 @@ export default function Roadmap() {
       <Section className="bg-muted/30 text-center">
         <h2 className="text-xl font-bold">Sugira uma funcionalidade</h2>
         <p className="mx-auto mt-2 max-w-lg text-muted-foreground">
-          O roadmap do SleepComet é inspirado pela comunidade. Tem uma ideia? Compartilhe com a
+          O roadmap do Sleepcomet é inspirado pela comunidade. Tem uma ideia? Compartilhe com a
           gente.
         </p>
         <a

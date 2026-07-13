@@ -94,7 +94,7 @@ export function Navbar() {
           </div>
 
           <Link href="/" className="relative z-10 flex items-center gap-2">
-            <Image src="/logo.png" alt="SleepComet" width={319} height={259} className="h-4 w-auto" />
+            <Image src="/logo.png" alt="Sleepcomet" width={319} height={259} className="h-4 w-auto" />
           </Link>
 
           <div className="relative z-10 hidden items-center gap-1 md:flex">
