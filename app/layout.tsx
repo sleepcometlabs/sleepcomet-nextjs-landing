@@ -226,20 +226,6 @@ export default function RootLayout({
               data-blockingmode="auto"
               strategy="lazyOnload"
             />
-            <Script
-              id="plausible-init"
-              strategy="afterInteractive"
-              dangerouslySetInnerHTML={{
-                __html: `window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }`,
-              }}
-            />
-            <Script
-              id="plausible-src"
-              defer
-              data-domain="sleepcomet.com"
-              src="https://analytics.sleepcomet.com/js/script.file-downloads.hash.outbound-links.pageview-props.revenue.tagged-events.js"
-              strategy="afterInteractive"
-            />
             {process.env.NEXT_PUBLIC_GTM_ID && (
               <Script
                 id="gtm"
