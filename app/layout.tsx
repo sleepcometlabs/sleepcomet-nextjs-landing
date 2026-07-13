@@ -10,7 +10,7 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 const siteName = "SleepComet — Clipagem Automática com IA"
 const titleDefault =
-  "Cortar Vídeo com IA — Clipagem Automática para TikTok, Reels e Shorts | SleepComet"
+  "Sleepcomet - Cortar Vídeo com IA — Clipagem Automática para TikTok, Reels e Shorts"
 const descriptionDefault =
   "Corte vídeos automaticamente com inteligência artificial. O SleepComet analisa seu vídeo, encontra os melhores momentos e gera clipes prontos para TikTok, Instagram Reels e YouTube Shorts em segundos. Comece grátis sem cartão de crédito."
 
