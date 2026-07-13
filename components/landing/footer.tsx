@@ -11,6 +11,7 @@ import { FaInstagram } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { StatusIndicator } from "./status-indicator";
 
 const productLinks = [
   { label: "Como funciona", href: "/como-funciona" },
@@ -30,12 +31,6 @@ const legalLinks = [
   { label: "Exclusão de Dados", href: "/exclusao-de-dados" },
   { label: "Licenças", href: "/licencas" },
 ]
-
-// Status page pública (UptimeRobot) — link direto, sem chamada de API no
-// client: a página deles já bloqueia iframe (X-Frame-Options: DENY) e não
-// libera CORS pra fetch cross-origin, então "tempo real" aqui é sempre
-// abrir o link e ver o status atual lá.
-const STATUS_PAGE_URL = "https://stats.uptimerobot.com/UzrhpUosXP"
 
 export function Footer() {
   return (
@@ -191,18 +186,7 @@ export function Footer() {
             ))}
           </div>
 
-          <Link
-            href={STATUS_PAGE_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="group flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-white/80 transition-colors hover:border-white/20 hover:text-white"
-          >
-            <span className="relative flex size-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
-            </span>
-            Todos os sistemas operacionais
-          </Link>
+          <StatusIndicator />
 
           <p className="text-xs text-white/80">
             © 2026 Sleepcomet. Todos os direitos reservados.
