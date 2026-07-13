@@ -108,22 +108,23 @@ export function Footer() {
                 <FaGithub className="size-4" />
               </Link>
 
-            </div>
+              <a
+                href="https://www.producthunt.com/products/sleepcomet-clipagem-automatica-com-ia?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-sleepcomet-clipagem-automatica-com-ia"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="ml-1 inline-block shrink-0"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1195589&theme=dark"
+                  alt="SleepComet — Clipagem Automática com IA - Turn long videos into viral clips with AI | Product Hunt"
+                  width={150}
+                  height={32}
+                  className="h-8 w-auto"
+                />
+              </a>
 
-            <a
-              href="https://www.producthunt.com/products/sleepcomet-clipagem-automatica-com-ia?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-sleepcomet-clipagem-automatica-com-ia"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-6 inline-block"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
-                src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1195589&theme=dark"
-                alt="SleepComet — Clipagem Automática com IA - Turn long videos into viral clips with AI | Product Hunt"
-                width={250}
-                height={54}
-              />
-            </a>
+            </div>
           </div>
 
           {/* PRODUCT */}
