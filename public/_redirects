@@ -1,0 +1,9 @@
+# Páginas legais servidas com 200 direto também SEM a barra final — o
+# verificador do Google (OAuth/Play) reprova URL de política de privacidade
+# que responde com redirect (o export estático do Next gera /privacidade/
+# e o Pages devolvia 308 na versão sem barra).
+/privacidade /privacidade/ 200
+/termos /termos/ 200
+/exclusao-de-dados /exclusao-de-dados/ 200
+/cookies /cookies/ 200
+/licencas /licencas/ 200
