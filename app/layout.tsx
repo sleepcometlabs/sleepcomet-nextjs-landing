@@ -214,7 +214,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://i.pravatar.cc" />
         <link rel="dns-prefetch" href="https://i.pravatar.cc" />
       </head>
-      <body className="flex min-h-full flex-col bg-background text-foreground">
+      <body className="flex min-h-full flex-col bg-background text-foreground" cz-shortcut-listen="true">
         {children}
         <ScAnalytics />
         {process.env.NODE_ENV === "production" && (

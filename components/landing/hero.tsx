@@ -1,13 +1,9 @@
 "use client"
 
-import Link from "next/link"
-import { ArrowRight } from "lucide-react"
-
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text"
 import { AvatarCircles } from "@/components/ui/avatar-circles"
-import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { LiquidBackground } from "../liquid-background"
-import { APP_URL } from "@/lib/config"
+import { UrlCapturePill } from "./url-capture-pill"
 
 const avatars = [
   { imageUrl: "https://i.pravatar.cc/80?u=1", profileUrl: "#" },
@@ -19,7 +15,7 @@ const avatars = [
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-4 pt-20">
+    <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-4 pt-20">
 
       {/* BACKGROUND ANIMATION */}
       <div className="absolute inset-0">
@@ -67,14 +63,7 @@ export function Hero() {
           Shorts. Comece grátis sem cartão de crédito.
         </p>
 
-        <div className="flex items-center gap-4">
-          <Link href={APP_URL}>
-            <ShimmerButton className="gap-2">
-              Começar grátis
-              <ArrowRight className="size-4" />
-            </ShimmerButton>
-          </Link>
-        </div>
+        <UrlCapturePill className="w-full px-4 sm:px-0" />
 
         <div className="flex items-center gap-3 pt-2">
           <AvatarCircles
