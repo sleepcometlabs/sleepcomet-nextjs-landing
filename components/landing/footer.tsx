@@ -8,9 +8,9 @@ import {
 
 import { FaXTwitter } from "react-icons/fa6";
 import { FaInstagram } from "react-icons/fa";
-import { FaYoutube } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
+import { FaRedditAlien } from "react-icons/fa";
+import { FaProductHunt } from "react-icons/fa";
 import { StatusIndicator } from "./status-indicator";
 
 const productLinks = [
@@ -59,7 +59,7 @@ export function Footer() {
             <div className="mt-8 flex items-center gap-3">
 
               <Link
-                href="https://x.com/sleepcomet"
+                href="https://x.com/usesleepcomet"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X (Twitter)"
@@ -69,7 +69,7 @@ export function Footer() {
               </Link>
 
               <Link
-                href="https://instagram.com/sleepcomet"
+                href="https://www.instagram.com/usesleepcomet"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
@@ -79,27 +79,27 @@ export function Footer() {
               </Link>
 
               <Link
-                href="https://youtube.com/@sleepcomet"
+                href="https://www.reddit.com/r/sleepcomet/"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="YouTube"
+                aria-label="Reddit"
                 className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
               >
-                <FaYoutube className="size-4" />
+                <FaRedditAlien className="size-4" />
               </Link>
 
               <Link
-                href="https://linkedin.com/company/sleepcomet"
+                href="https://www.producthunt.com/@sleepcomet"
                 target="_blank"
                 rel="noopener noreferrer"
-                aria-label="LinkedIn"
+                aria-label="Product Hunt"
                 className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
               >
-                <FaLinkedin className="size-4" />
+                <FaProductHunt className="size-4" />
               </Link>
 
               <Link
-                href="https://github.com/sleepcomet"
+                href="https://github.com/sleepcometlabs"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"

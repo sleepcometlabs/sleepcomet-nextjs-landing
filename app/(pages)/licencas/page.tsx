@@ -125,7 +125,7 @@ export default function Licencas() {
               código aberto e acreditamos na transparência como valor fundamental.
             </p>
             <a
-              href="https://github.com/sleepcomet"
+              href="https://github.com/sleepcometlabs"
               target="_blank"
               rel="noopener noreferrer"
             className="mt-4 inline-block text-sm font-medium text-primary underline underline-offset-4 hover:no-underline"

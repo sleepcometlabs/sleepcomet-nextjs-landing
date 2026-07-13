@@ -29,12 +29,11 @@ const contactMethods = [
 ]
 
 const socialLinks = [
-  { name: "Twitter / X", url: "https://twitter.com/sleepcomet" },
-  { name: "Instagram", url: "https://instagram.com/sleepcomet" },
-  { name: "YouTube", url: "https://youtube.com/@sleepcomet" },
-  { name: "LinkedIn", url: "https://linkedin.com/company/sleepcomet" },
-  { name: "GitHub", url: "https://github.com/sleepcomet" },
-  { name: "Discord", url: "https://discord.gg/sleepcomet" },
+  { name: "X (Twitter)", url: "https://x.com/usesleepcomet" },
+  { name: "Instagram", url: "https://www.instagram.com/usesleepcomet" },
+  { name: "Reddit", url: "https://www.reddit.com/r/sleepcomet/" },
+  { name: "Product Hunt", url: "https://www.producthunt.com/@sleepcomet" },
+  { name: "GitHub", url: "https://github.com/sleepcometlabs" },
 ]
 
 export function ContactContent() {

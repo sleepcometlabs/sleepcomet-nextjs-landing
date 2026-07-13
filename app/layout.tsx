@@ -128,10 +128,11 @@ const jsonLdOrganization = {
   logo: `${siteUrl}/logo.png`,
   description: "Plataforma de clipagem automática com inteligência artificial para criadores de conteúdo.",
   sameAs: [
-    "https://twitter.com/sleepcomet",
-    "https://instagram.com/sleepcomet",
-    "https://youtube.com/@sleepcomet",
-    "https://linkedin.com/company/sleepcomet",
+    "https://x.com/usesleepcomet",
+    "https://www.instagram.com/usesleepcomet",
+    "https://www.reddit.com/r/sleepcomet/",
+    "https://www.producthunt.com/@sleepcomet",
+    "https://github.com/sleepcometlabs",
   ],
 }
 
