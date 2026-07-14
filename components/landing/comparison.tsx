@@ -16,7 +16,7 @@ export function Comparison() {
             Cortar vídeo com IA vs edição manual
           </h2>
           <p className="text-muted-foreground">
-            Veja por que milhares de criadores escolhem a clipagem automática com inteligência artificial.
+            Veja por que a clipagem automática com inteligência artificial é mais rápida que editar na mão.
           </p>
         </div>
 

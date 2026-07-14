@@ -7,7 +7,6 @@ import dynamic from "next/dynamic"
 const FeaturesSectionDemo = dynamic(() => import("@/components/features-section-demo-2"))
 const HowItWorks = dynamic(() => import("@/components/landing/how-it-works").then((mod) => mod.HowItWorks))
 const Integrations = dynamic(() => import("@/components/landing/integrations").then((mod) => mod.Integrations))
-const Testimonials = dynamic(() => import("@/components/landing/testimonials").then((mod) => mod.Testimonials))
 const Comparison = dynamic(() => import("@/components/landing/comparison").then((mod) => mod.Comparison))
 const Pricing = dynamic(() => import("@/components/landing/pricing").then((mod) => mod.Pricing))
 const FAQSection = dynamic(() => import("@/components/landing/faq-section").then((mod) => mod.FAQSection))
@@ -23,7 +22,6 @@ export default function Home() {
         <FeaturesSectionDemo />
         <HowItWorks />
         <Integrations />
-        <Testimonials />
         <Comparison />
         <Pricing />
         <FAQSection />
