@@ -124,6 +124,20 @@ export function Footer() {
                 />
               </a>
 
+              <a
+                href="https://viberank.dev/apps/Sleepcomet"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block shrink-0"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="https://viberank.dev/badge?app=Sleepcomet&theme=dark"
+                  alt="Sleepcomet on VibeRank"
+                  className="h-8 w-auto"
+                />
+              </a>
+
             </div>
           </div>
 
