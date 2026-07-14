@@ -65,17 +65,6 @@ export function Hero() {
 
         <UrlCapturePill className="w-full px-4 sm:px-0" />
 
-        <div className="flex items-center gap-3 pt-2">
-          <AvatarCircles
-            avatarUrls={avatars}
-            numPeople={1200}
-            className="scale-90"
-          />
-
-          <span className="text-xs text-muted-foreground">
-            Mais de <strong className="text-foreground/80">1.200</strong> criadores usam
-          </span>
-        </div>
       </div>
     </section>
   )
