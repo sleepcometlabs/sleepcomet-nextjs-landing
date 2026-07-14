@@ -1,17 +1,8 @@
 "use client"
 
 import { AnimatedShinyText } from "@/components/ui/animated-shiny-text"
-import { AvatarCircles } from "@/components/ui/avatar-circles"
 import { LiquidBackground } from "../liquid-background"
 import { UrlCapturePill } from "./url-capture-pill"
-
-const avatars = [
-  { imageUrl: "https://i.pravatar.cc/80?u=1", profileUrl: "#" },
-  { imageUrl: "https://i.pravatar.cc/80?u=2", profileUrl: "#" },
-  { imageUrl: "https://i.pravatar.cc/80?u=3", profileUrl: "#" },
-  { imageUrl: "https://i.pravatar.cc/80?u=4", profileUrl: "#" },
-  { imageUrl: "https://i.pravatar.cc/80?u=5", profileUrl: "#" },
-]
 
 export function Hero() {
   return (

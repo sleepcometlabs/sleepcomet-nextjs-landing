@@ -211,10 +211,7 @@ export default function RootLayout({
       lang="pt-BR"
       className={cn("antialiased", "dark", geist.className, "font-sans", geist.variable)}
     >
-      <head>
-        <link rel="preconnect" href="https://i.pravatar.cc" />
-        <link rel="dns-prefetch" href="https://i.pravatar.cc" />
-      </head>
+      <head></head>
       <body className="flex min-h-full flex-col bg-background text-foreground" cz-shortcut-listen="true">
         {children}
         <ScAnalytics />
