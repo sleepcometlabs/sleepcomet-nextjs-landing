@@ -29,7 +29,7 @@ const features = [
 
 export function PodcastFeatures() {
   return (
-    <Section className="bg-muted/30">
+    <Section>
       <div className="mx-auto max-w-4xl text-center">
         <h2 className="text-2xl font-bold sm:text-3xl">
           Feito pra quem grava conversa de verdade

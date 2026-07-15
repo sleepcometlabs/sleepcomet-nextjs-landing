@@ -6,7 +6,7 @@ import { UrlCapturePill } from "@/components/landing/url-capture-pill"
 
 export function PodcastHero() {
   return (
-    <section id="hero" className="relative overflow-hidden bg-background px-4 py-20 sm:py-28">
+    <section id="hero" className="relative -mt-16 overflow-hidden bg-background px-4 py-20 sm:py-28">
 
       {/* BACKGROUND ANIMATION */}
       <div className="absolute inset-0">
