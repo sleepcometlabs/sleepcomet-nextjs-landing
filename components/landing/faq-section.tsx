@@ -7,7 +7,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 
-const faqs = [
+const baseFaqs = [
   {
     q: "O que é o Sleepcomet?",
     a: "Sleepcomet é uma ferramenta com inteligência artificial que analisa seus vídeos, identifica os melhores momentos e gera clipes prontos para publicar em redes sociais como TikTok, Instagram Reels, YouTube Shorts e Facebook.",
@@ -42,20 +42,26 @@ const faqs = [
   },
 ]
 
-const faqStructuredData = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: faqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.q,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.a,
-    },
-  })),
+interface FAQSectionProps {
+  extraFaqs?: { q: string; a: string }[]
 }
 
-export function FAQSection() {
+export function FAQSection({ extraFaqs = [] }: FAQSectionProps) {
+  const faqs = [...extraFaqs, ...baseFaqs]
+
+  const faqStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.a,
+      },
+    })),
+  }
+
   return (
     <section id="faq" className="px-4 py-16 sm:py-28">
       <script

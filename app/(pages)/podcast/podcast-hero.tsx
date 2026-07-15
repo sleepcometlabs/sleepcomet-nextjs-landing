@@ -4,6 +4,14 @@ import { AnimatedShinyText } from "@/components/ui/animated-shiny-text"
 import { LiquidBackground } from "@/components/liquid-background"
 import { UrlCapturePill } from "@/components/landing/url-capture-pill"
 
+export const PODCAST_ROTATING_MESSAGES = [
+  "Cole o link do episódio",
+  "Reconhecendo cada voz...",
+  "Encontramos 8 momentos virais",
+  "Gerando legendas automáticas...",
+  "Seus cortes estão prontos 🎙️",
+]
+
 export function PodcastHero() {
   return (
     <section id="hero" className="relative -mt-16 overflow-hidden bg-background px-4 py-20 sm:py-28">
@@ -55,7 +63,7 @@ export function PodcastHero() {
           sem cartão de crédito.
         </p>
 
-        <UrlCapturePill className="w-full px-4 sm:px-0" />
+        <UrlCapturePill className="w-full px-4 sm:px-0" messages={PODCAST_ROTATING_MESSAGES} />
 
       </div>
     </section>

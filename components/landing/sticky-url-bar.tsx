@@ -19,7 +19,11 @@ const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffec
 // dele. Ativa em qualquer página que monte uma seção com id="hero"
 // (Home e /podcast); nas demais, o ScrollTrigger não encontra o alvo e
 // a barra fica escondida sem erro.
-export function StickyUrlBar() {
+interface StickyUrlBarProps {
+  messages?: string[]
+}
+
+export function StickyUrlBar({ messages }: StickyUrlBarProps) {
   const barRef = useRef<HTMLDivElement>(null)
 
   useIsomorphicLayoutEffect(() => {
@@ -57,7 +61,7 @@ export function StickyUrlBar() {
       // depois da hidratação, que já é tarde demais pro paint inicial).
       className="fixed inset-x-0 bottom-4 z-50 flex translate-y-[120%] justify-center px-4 opacity-0 invisible sm:bottom-6"
     >
-      <UrlCapturePill size="compact" />
+      <UrlCapturePill size="compact" messages={messages} />
     </div>
   )
 }

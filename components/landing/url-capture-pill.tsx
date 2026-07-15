@@ -16,9 +16,10 @@ const ROTATING_MESSAGES = [
 interface UrlCapturePillProps {
   size?: "default" | "compact"
   className?: string
+  messages?: string[]
 }
 
-export function UrlCapturePill({ size = "default", className }: UrlCapturePillProps) {
+export function UrlCapturePill({ size = "default", className, messages = ROTATING_MESSAGES }: UrlCapturePillProps) {
   const { url, setUrl, error, submit } = useUrlCapture()
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -45,7 +46,7 @@ export function UrlCapturePill({ size = "default", className }: UrlCapturePillPr
                 isCompact ? "pl-3.5 text-sm" : "pl-5 text-[15px]"
               )}
             >
-              <WordRotate words={ROTATING_MESSAGES} />
+              <WordRotate words={messages} />
             </div>
           )}
           <input
