@@ -11,6 +11,8 @@ import { FaInstagram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { FaRedditAlien } from "react-icons/fa";
 import { FaProductHunt } from "react-icons/fa";
+import { FaTiktok } from "react-icons/fa";
+import { FaYoutube } from "react-icons/fa";
 import { StatusIndicator } from "./status-indicator";
 
 const productLinks = [
@@ -106,6 +108,26 @@ export function Footer() {
                 className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
               >
                 <FaGithub className="size-4" />
+              </Link>
+
+              <Link
+                href="https://www.tiktok.com/@usesleepcomet"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="TikTok"
+                className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
+              >
+                <FaTiktok className="size-4" />
+              </Link>
+
+              <Link
+                href="https://www.youtube.com/@usesleepcomet"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="YouTube"
+                className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
+              >
+                <FaYoutube className="size-4" />
               </Link>
 
               <a

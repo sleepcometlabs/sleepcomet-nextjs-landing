@@ -8,7 +8,7 @@ import { ArrowRight, BadgeCheck, Zap } from "lucide-react"
 import { useState } from "react"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 
-import { APP_URL, DISCORD_URL } from "@/lib/config"
+import { APP_URL, REDDIT_URL } from "@/lib/config"
 
 const plans = [
   {
@@ -105,7 +105,7 @@ const plans = [
       "Suporte prioritário 24/7",
     ],
     cta: "Falar com vendas",
-    href: DISCORD_URL,
+    href: "mailto:comercial@sleepcomet.com",
     popular: false,
   },
 ]
@@ -196,7 +196,7 @@ export function Pricing() {
                     <BadgeCheck className="h-lh w-4 flex-none text-brand-foreground" />
                     {feature === "Suporte pela comunidade" ? (
                       <a
-                        href={DISCORD_URL}
+                        href={REDDIT_URL}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="hover:text-foreground underline underline-offset-2 transition-colors"

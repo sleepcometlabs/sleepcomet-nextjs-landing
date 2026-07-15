@@ -130,9 +130,6 @@ const sections = [
           <strong>E-mail:</strong>{" "}
           <a href="mailto:privacidade@sleepcomet.com" className="text-primary underline underline-offset-4 hover:no-underline">privacidade@sleepcomet.com</a>
         </p>
-        <p>
-          <strong>Endereço:</strong> [Inserir endereço comercial]
-        </p>
       </div>
     ),
   },

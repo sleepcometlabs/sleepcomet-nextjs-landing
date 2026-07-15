@@ -26,7 +26,7 @@ const faqs = [
   },
   {
     q: "Posso usar o Sleepcomet de graça?",
-    a: "Sim! O plano Free oferece 30 créditos por mês para você processar seus vídeos (1 crédito = 1 minuto de vídeo), com clipes de até 60 segundos, marca d'água Sleepcomet e acesso ao suporte da comunidade no Discord. Sem compromisso.",
+    a: "Sim! O plano Free oferece 30 créditos por mês para você processar seus vídeos (1 crédito = 1 minuto de vídeo), com clipes de até 60 segundos, marca d'água Sleepcomet e acesso ao suporte da comunidade no Reddit. Sem compromisso.",
   },
   {
     q: "Quanto tempo leva para processar um vídeo?",

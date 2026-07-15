@@ -12,5 +12,5 @@ export const APP_URL =
 export const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 
-export const DISCORD_URL =
-  process.env.NEXT_PUBLIC_DISCORD_URL || "https://discord.gg/sleepcomet"
+export const REDDIT_URL =
+  process.env.NEXT_PUBLIC_REDDIT_URL || "https://www.reddit.com/r/sleepcomet/"
