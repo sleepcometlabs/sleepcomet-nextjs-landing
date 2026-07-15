@@ -14,6 +14,7 @@ const navItems = [
       { label: "Como funciona", href: "/como-funciona" },
       { label: "Clipagem com IA", href: "/clipagem-ia" },
       { label: "Legendas automáticas", href: "/legendas-automaticas" },
+      { label: "Corte de podcast", href: "/podcast" },
     ],
   },
   {
