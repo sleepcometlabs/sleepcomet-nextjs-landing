@@ -16,8 +16,9 @@ const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffec
 
 // Réplica compacta do pill do Hero, fixa no rodapé — some enquanto o Hero
 // está visível e desliza suave pra dentro assim que o usuário rola além
-// dele. Só existe na Home (é montada direto em app/page.tsx, não em
-// nenhuma outra rota).
+// dele. Ativa em qualquer página que monte uma seção com id="hero"
+// (Home e /podcast); nas demais, o ScrollTrigger não encontra o alvo e
+// a barra fica escondida sem erro.
 export function StickyUrlBar() {
   const barRef = useRef<HTMLDivElement>(null)
 
