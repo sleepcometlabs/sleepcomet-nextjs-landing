@@ -30,15 +30,13 @@ export const metadata: Metadata = {
 export default function PodcastLanding() {
   return (
     <UrlCaptureProvider>
-      <div className="pt-20">
-        <PodcastHero />
-        <PodcastFeatures />
-        <HowItWorks />
-        <Comparison />
-        <Pricing />
-        <FAQSection />
-        <Cta />
-      </div>
+      <PodcastHero />
+      <PodcastFeatures />
+      <HowItWorks />
+      <Comparison />
+      <Pricing />
+      <FAQSection />
+      <Cta />
       <StickyUrlBar />
     </UrlCaptureProvider>
   )
