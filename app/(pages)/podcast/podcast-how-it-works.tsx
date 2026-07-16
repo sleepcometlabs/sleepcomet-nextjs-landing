@@ -1,8 +1,8 @@
 const steps = [
   {
     step: "01",
-    title: "Cole o link do episódio",
-    desc: "Cole o link do episódio do seu podcast — a IA baixa e processa a gravação inteira automaticamente.",
+    title: "Cole o link do vídeo",
+    desc: "Cole o link do YouTube do seu episódio — a IA baixa e processa a gravação inteira automaticamente.",
   },
   {
     step: "02",

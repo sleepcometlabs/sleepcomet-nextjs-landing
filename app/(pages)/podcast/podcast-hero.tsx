@@ -5,7 +5,7 @@ import { LiquidBackground } from "@/components/liquid-background"
 import { UrlCapturePill } from "@/components/landing/url-capture-pill"
 
 export const PODCAST_ROTATING_MESSAGES = [
-  "Cole o link do episódio",
+  "Cole o link do vídeo no YouTube",
   "Reconhecendo cada voz...",
   "Encontramos 8 momentos virais",
   "Gerando legendas automáticas...",
@@ -57,10 +57,10 @@ export function PodcastHero() {
         </h1>
 
         <p className="max-w-2xl text-base text-muted-foreground sm:text-lg">
-          Cole o link do episódio. Nossa IA reconhece cada voz da conversa,
-          encontra os melhores momentos e devolve os cortes prontos com
-          legenda sincronizada — pra TikTok, Reels e Shorts. Comece grátis
-          sem cartão de crédito.
+          Grava seu podcast em vídeo? Cole o link do YouTube. Nossa IA
+          reconhece cada voz da conversa, encontra os melhores momentos e
+          devolve os cortes prontos com legenda sincronizada — pra TikTok,
+          Reels e Shorts. Comece grátis sem cartão de crédito.
         </p>
 
         <UrlCapturePill className="w-full px-4 sm:px-0" messages={PODCAST_ROTATING_MESSAGES} />
