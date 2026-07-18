@@ -104,11 +104,11 @@ export default function Sobre() {
           </p>
           <Button size="lg" className="mt-8" asChild>
             <a
-              href="https://github.com/sleepcomet-com"
+              href="https://github.com/sleepcometlabs"
               target="_blank"
               rel="noopener noreferrer"
             >
-              github.com/sleepcomet-com →
+              github.com/sleepcometlabs →
             </a>
           </Button>
         </div>
