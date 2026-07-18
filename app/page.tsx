@@ -1,5 +1,6 @@
 import { Navbar } from "@/components/landing/navbar"
 import { Hero } from "@/components/landing/hero"
+import { ProductDemo } from "@/components/landing/product-demo"
 import { UrlCaptureProvider } from "@/components/landing/url-capture-context"
 import { StickyUrlBar } from "@/components/landing/sticky-url-bar"
 import dynamic from "next/dynamic"
@@ -16,9 +17,10 @@ const Footer = dynamic(() => import("@/components/landing/footer").then((mod) =>
 export default function Home() {
   return (
     <UrlCaptureProvider>
-      <main className="bg-background text-foreground min-h-screen w-full">
+      <main className="bg-black text-foreground min-h-screen w-full">
         <Navbar />
         <Hero />
+        <ProductDemo />
         <FeaturesSectionDemo />
         <HowItWorks />
         <Integrations />

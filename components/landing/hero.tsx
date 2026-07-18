@@ -1,60 +1,51 @@
 "use client"
 
-import { AnimatedShinyText } from "@/components/ui/animated-shiny-text"
-import { LiquidBackground } from "../liquid-background"
+import Image from "next/image"
 import { UrlCapturePill } from "./url-capture-pill"
 
 export function Hero() {
   return (
-    <section id="hero" className="relative flex min-h-screen items-center justify-center overflow-hidden bg-background px-4 pt-20">
+    // bg-black fixo (não bg-background) — a referência usa preto puro
+    // (#000), não o cinza bem escuro do token de tema padrão.
+    // isolate é essencial aqui: sem um contexto de empilhamento próprio, o
+    // -z-10 do arco escapa pro contexto do <body> e a PRÓPRIA section (que
+    // não tem z-index, só position:relative) pinta seu bg-black por cima do
+    // arco — era exatamente esse o bug do arco "sumido".
+    <section id="hero" className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-black px-4 pt-20">
 
-      {/* BACKGROUND ANIMATION */}
-      <div className="absolute inset-0">
-        <LiquidBackground
-          sizing="fill"
-          animation={{
-            scale: 100,
-            speed: 70,
-          }}
-          noise={{
-            opacity: 0.15,
-            scale: 1,
-          }}
-        />
-      </div>
-
-      {/* OVERLAY */}
-      <div className="absolute inset-0 bg-background/40" />
+      {/* GLOW EM ARCO — asset com fundo já transparente (ver
+          public/hero-arc.png), só o traço/brilho roxo por cima do preto.
+          <img> em vez de background-image: mais previsível de depurar. */}
+      <Image
+        src="/hero-arc.png"
+        alt=""
+        aria-hidden="true"
+        width={1728}
+        height={600}
+        priority
+        unoptimized
+        className="pointer-events-none absolute left-1/2 top-[49%] -z-10 h-auto w-[2400px] max-w-none -translate-x-1/2"
+      />
 
       {/* FADE */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-linear-to-t from-background to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-64 bg-linear-to-t from-black to-transparent" />
 
       {/* CONTENT */}
-      <div className="relative z-10 mx-auto flex max-w-6xl flex-col items-center gap-8 text-center">
+      <div className="relative z-10 mx-auto flex max-w-6xl -translate-y-16 flex-col items-center gap-8 text-center">
 
-        <div className="inline-flex items-center justify-center rounded-full border border-border/40 bg-background/50 px-4 py-1 backdrop-blur-sm">
-          <AnimatedShinyText shimmerWidth={120}>
-            <span className="text-xs font-medium tracking-wide">
-              ✦ IA que encontra os melhores momentos
-            </span>
-          </AnimatedShinyText>
-        </div>
-
-        <h1 className="text-3xl leading-tight font-bold tracking-tight sm:text-6xl md:text-6xl">
-          Cortar vídeo com IA
+        <h1 className="max-w-4xl text-3xl leading-tight font-bold tracking-tight text-white sm:text-6xl md:text-6xl">
+          Transforme vídeos longos
           <br />
-          <span className="bg-linear-to-r from-brand to-brand/60 bg-clip-text text-transparent">
-            crie clipes virais em segundos
-          </span>
+          em cortes virais com IA.
         </h1>
 
-        <p className="max-w-2xl text-base text-muted-foreground sm:text-lg">
-          Inteligência artificial que analisa seus vídeos, encontra os melhores
-          momentos e gera clipes prontos para TikTok, Instagram Reels e YouTube
-          Shorts. Comece grátis sem cartão de crédito.
+        <p className="max-w-3xl text-base text-muted-foreground sm:text-lg">
+          Cole um link do YouTube, Twitch ou envie um vídeo. Nossa IA encontra automaticamente
+          <br />
+          os melhores momentos, gera legendas e deixa tudo pronto para publicar.
         </p>
 
-        <UrlCapturePill className="w-full px-4 sm:px-0" />
+        <UrlCapturePill variant="dark" className="w-full px-4 sm:px-0" />
 
       </div>
     </section>

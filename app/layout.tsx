@@ -1,11 +1,12 @@
 import type { Metadata, Viewport } from "next"
-import { Geist } from "next/font/google"
+import { Geist, Figtree } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import Script from "next/script"
 import { ScAnalytics } from "@/components/sc-analytics"
 
 const geist = Geist({ subsets: ["latin"], variable: "--font-sans" })
+const figtree = Figtree({ subsets: ["latin"], variable: "--font-figtree" })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 const siteName = "Sleepcomet — Clipagem Automática com IA"
@@ -209,7 +210,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
-      className={cn("antialiased", "dark", geist.className, "font-sans", geist.variable)}
+      className={cn("antialiased", "dark", geist.className, "font-sans", geist.variable, figtree.variable)}
     >
       <head></head>
       <body className="flex min-h-full flex-col bg-background text-foreground" cz-shortcut-listen="true">

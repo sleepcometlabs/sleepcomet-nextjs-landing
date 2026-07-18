@@ -37,7 +37,7 @@ const legalLinks = [
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-background px-6 pt-16 pb-8 sm:pt-28">
+    <footer className="relative overflow-hidden border-t border-white/10 bg-black px-6 pt-16 pb-8 sm:pt-28">
 
       <div className="relative mx-auto max-w-6xl">
 

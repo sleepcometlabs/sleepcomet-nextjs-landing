@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react"
 import gsap from "gsap"
+import { cn } from "@/lib/utils"
 
 interface WordRotateProps {
   words: string[]
@@ -44,5 +45,5 @@ export function WordRotate({ words, interval = 2400, className, active = true }:
     }
   }, [words, interval, active])
 
-  return <span ref={ref} className={className} aria-hidden="true" />
+  return <span ref={ref} className={cn("inline-block will-change-transform", className)} aria-hidden="true" />
 }
