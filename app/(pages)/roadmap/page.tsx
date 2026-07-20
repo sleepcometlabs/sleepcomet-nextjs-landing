@@ -2,7 +2,6 @@ import type { Metadata } from "next"
 import { Section } from "@/components/ui/section"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
-import { BreadcrumbList } from "@/components/seo/breadcrumb-list"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 
@@ -50,7 +49,7 @@ const timeline = [
       { name: "Exportação de legendas", status: "done" },
       { name: "Suporte a múltiplos idiomas", status: "done" },
       { name: "Primeiros templates virais", status: "done" },
-      { name: "Publicação direta TikTok/Instagram/YouTube", status: "in_progress" },
+      { name: "Publicação direta TikTok/Instagram/YouTube", status: "done" },
     ],
   },
   {
@@ -68,16 +67,16 @@ const timeline = [
       { name: "Deploy automatizado", status: "done" },
       { name: "Infraestrutura própria de e-mail", status: "done" },
       { name: "Separação de áudio para maior precisão em músicas", status: "in_progress" },
-      { name: "Editor de vídeo integrado", status: "in_progress" },
-      { name: "API pública para desenvolvedores", status: "in_progress" },
-      { name: "Webhooks para automação", status: "in_progress" },
+      { name: "Editor de vídeo integrado", status: "done" },
+      { name: "API pública para desenvolvedores", status: "planned" },
+      { name: "Webhooks para automação", status: "planned" },
     ],
   },
   {
     period: "Q4 2026",
     title: "Editor e expansão",
     items: [
-      { name: "Timeline interativa com keyframes", status: "planned" },
+      { name: "Timeline interativa com keyframes", status: "in_progress" },
       { name: "Suporte a podcasts (áudio → clipes)", status: "planned" },
       { name: "Detecção de trending topics com IA", status: "planned" },
       { name: "Colaboração em equipe", status: "planned" },
@@ -106,13 +105,18 @@ const statusConfig: Record<string, { label: string; variant: "default" | "second
 
 export default function Roadmap() {
   return (
-    <div className="pt-20">
-      <Section className="text-center">
+    <div>
+      <Section className="relative isolate -mt-16 overflow-hidden pt-24 pb-16 text-center sm:pb-28">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-brand/25 blur-[120px]"
+        />
         <div className="mx-auto max-w-4xl">
-          <BreadcrumbList items={[{ name: "Roadmap", url: `${siteUrl}/roadmap/` }]} />
-          <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">Roadmap</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Roadmap</h1>
           <p className="mx-auto mt-4 max-w-md text-lg text-muted-foreground">
-            Acompanhe a evolução do Sleepcomet. Do MVP ao futuro da criação de conteúdo com IA.
+            Acompanhe a evolução do Sleepcomet.
+            <br />
+            Do MVP ao futuro da criação de conteúdo com IA.
           </p>
         </div>
       </Section>
@@ -122,19 +126,19 @@ export default function Roadmap() {
           {timeline.map((phase) => (
             <div key={phase.period}>
               <div className="mb-6 flex items-center gap-4">
-                <span className="rounded-lg bg-primary/10 px-3 py-1 font-mono text-sm font-medium text-primary">
+                <span className="rounded-lg bg-brand/10 px-3 py-1 font-mono text-sm font-medium text-brand">
                   {phase.period}
                 </span>
-                <h2 className="text-xl font-bold">{phase.title}</h2>
+                <h2 className="text-xl font-bold text-white">{phase.title}</h2>
               </div>
-              <div className="space-y-3">
+              <div>
                 {phase.items.map((item) => {
                   const config = statusConfig[item.status]
                   return (
                     <div
                       key={item.name}
                       className={cn(
-                        "flex items-center justify-between rounded-xl border bg-card px-4 py-3 transition-colors",
+                        "relative line-fade-b flex items-center justify-between px-4 py-3",
                         item.status === "done" && "opacity-60",
                       )}
                     >
@@ -158,15 +162,15 @@ export default function Roadmap() {
         </div>
       </Section>
 
-      <Section className="bg-muted/30 text-center">
-        <h2 className="text-xl font-bold">Sugira uma funcionalidade</h2>
+      <Section className="text-center">
+        <h2 className="text-xl font-bold text-white">Sugira uma funcionalidade</h2>
         <p className="mx-auto mt-2 max-w-lg text-muted-foreground">
           O roadmap do Sleepcomet é inspirado pela comunidade. Tem uma ideia? Compartilhe com a
           gente.
         </p>
         <a
           href="mailto:roadmap@sleepcomet.com"
-          className="mt-4 inline-block text-sm font-medium text-primary underline underline-offset-4 hover:no-underline"
+          className="mt-4 inline-block text-sm font-medium text-brand underline underline-offset-4 hover:no-underline"
         >
           Sugerir funcionalidade →
         </a>

@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
 import { Pricing } from "@/components/landing/pricing"
-import { BreadcrumbList } from "@/components/seo/breadcrumb-list"
+import { PricingComparison } from "@/components/landing/pricing-comparison"
+import { Cta } from "@/components/landing/cta"
+import { APP_URL } from "@/lib/config"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 
@@ -102,10 +104,14 @@ export default function PrecosPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
       />
-      <div className="mx-auto max-w-6xl px-4 pt-8">
-        <BreadcrumbList items={[{ name: "Preços", url: `${siteUrl}/precos/` }]} />
-      </div>
       <Pricing />
+      <PricingComparison />
+      <Cta
+        title="Ainda em dúvida sobre qual plano escolher?"
+        description="Comece no plano grátis, sem cartão de crédito, e faça upgrade quando precisar de mais créditos."
+        href={APP_URL}
+        label="Começar grátis"
+      />
     </div>
   )
 }

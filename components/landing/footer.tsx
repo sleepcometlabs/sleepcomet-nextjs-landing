@@ -14,6 +14,7 @@ import { FaProductHunt } from "react-icons/fa";
 import { FaTiktok } from "react-icons/fa";
 import { FaYoutube } from "react-icons/fa";
 import { StatusIndicator } from "./status-indicator";
+import { CookieSettingsButton } from "./cookie-settings-button";
 
 const productLinks = [
   { label: "Como funciona", href: "/como-funciona" },
@@ -30,19 +31,18 @@ const companyLinks = [
 const legalLinks = [
   { label: "Privacidade", href: "/privacy" },
   { label: "Termos", href: "/terms" },
-  { label: "Cookies", href: "/cookies" },
   { label: "Exclusão de Dados", href: "/exclusao-de-dados" },
   { label: "Licenças", href: "/licencas" },
 ]
 
 export function Footer() {
   return (
-    <footer className="relative overflow-hidden border-t border-white/10 bg-black px-6 pt-16 pb-8 sm:pt-28">
+    <footer className="relative line-fade-t overflow-hidden bg-black px-6 pt-16 pb-8 sm:pt-28">
 
       <div className="relative mx-auto max-w-6xl">
 
         {/* TOP */}
-        <div className="grid gap-14 border-b border-white/10 pb-16 md:grid-cols-2 lg:grid-cols-5">
+        <div className="grid gap-14 pb-16 md:grid-cols-2 lg:grid-cols-5">
 
           {/* BRAND */}
           <div className="lg:col-span-2">
@@ -66,7 +66,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="X (Twitter)"
-                className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
+                className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5"
               >
                 <FaXTwitter className="size-4" />
               </Link>
@@ -76,7 +76,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Instagram"
-                className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
+                className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5"
               >
                 <FaInstagram className="size-4" />
               </Link>
@@ -86,7 +86,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Reddit"
-                className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
+                className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5"
               >
                 <FaRedditAlien className="size-4" />
               </Link>
@@ -96,7 +96,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Product Hunt"
-                className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
+                className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5"
               >
                 <FaProductHunt className="size-4" />
               </Link>
@@ -106,7 +106,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
-                className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
+                className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5"
               >
                 <FaGithub className="size-4" />
               </Link>
@@ -116,7 +116,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="TikTok"
-                className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
+                className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5"
               >
                 <FaTiktok className="size-4" />
               </Link>
@@ -126,26 +126,10 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="YouTube"
-                className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5 duration-75 transition-all"
+                className="flex h-12 w-12 items-center justify-center rounded-full hover:bg-white/5"
               >
                 <FaYoutube className="size-4" />
               </Link>
-
-              <a
-                href="https://www.producthunt.com/products/sleepcomet-clipagem-automatica-com-ia?embed=true&utm_source=badge-featured&utm_medium=badge&utm_campaign=badge-sleepcomet-clipagem-automatica-com-ia"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="ml-auto inline-block shrink-0"
-              >
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=1195589&theme=dark"
-                  alt="Sleepcomet — Clipagem Automática com IA - Turn long videos into viral clips with AI | Product Hunt"
-                  width={150}
-                  height={32}
-                  className="h-8 w-auto"
-                />
-              </a>
 
             </div>
           </div>
@@ -161,11 +145,11 @@ export function Footer() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="group flex items-center gap-1 text-sm text-white/70 transition-colors hover:text-white"
+                  className="group flex items-center gap-1 text-sm text-white/70 underline-offset-4 hover:text-white hover:underline"
                 >
                   {link.label}
 
-                  <ArrowUpRight className="size-3 opacity-0 transition-all group-hover:opacity-100" />
+                  <ArrowUpRight className="size-3 opacity-0 group-hover:opacity-100" />
                 </Link>
               ))}
             </div>
@@ -182,11 +166,11 @@ export function Footer() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  className="group flex items-center gap-1 text-sm text-white/70 transition-colors hover:text-white"
+                  className="group flex items-center gap-1 text-sm text-white/70 underline-offset-4 hover:text-white hover:underline"
                 >
                   {link.label}
 
-                  <ArrowUpRight className="size-3 opacity-0 transition-all group-hover:opacity-100" />
+                  <ArrowUpRight className="size-3 opacity-0 group-hover:opacity-100" />
                 </Link>
               ))}
             </div>
@@ -201,10 +185,10 @@ export function Footer() {
             <div className="flex flex-col gap-4">
               <Link
                 href="/roadmap"
-                className="group flex items-center gap-1 text-sm text-white/80 transition-colors hover:text-white"
+                className="group flex items-center gap-1 text-sm text-white/80 underline-offset-4 hover:text-white hover:underline"
               >
                 Roadmap
-                <ArrowUpRight className="size-3 opacity-0 transition-all group-hover:opacity-100" />
+                <ArrowUpRight className="size-3 opacity-0 group-hover:opacity-100" />
               </Link>
             </div>
           </div>
@@ -218,11 +202,14 @@ export function Footer() {
               <Link
                 key={link.label}
                 href={link.href}
-                className="text-xs text-white/80 transition-colors hover:text-white"
+                className="text-xs text-white/80 underline-offset-4 hover:text-white hover:underline"
               >
                 {link.label}
               </Link>
             ))}
+            <CookieSettingsButton className="text-xs text-white/80 underline-offset-4 hover:text-white hover:underline">
+              Cookies
+            </CookieSettingsButton>
           </div>
 
           <StatusIndicator />

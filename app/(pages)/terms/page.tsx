@@ -175,7 +175,7 @@ const sections = [
       <div className="space-y-1">
         <p>
           <strong>E-mail:</strong>{" "}
-          <a href="mailto:legal@sleepcomet.com" className="text-primary underline underline-offset-4 hover:no-underline">legal@sleepcomet.com</a>
+          <a href="mailto:legal@sleepcomet.com" className="text-brand underline underline-offset-4 hover:no-underline">legal@sleepcomet.com</a>
         </p>
       </div>
     ),
@@ -187,12 +187,12 @@ export default function Termos() {
     <div className="pt-20">
       <Section>
         <div className="mx-auto max-w-3xl">
-          <h1 className="text-4xl font-bold tracking-tight mb-2">Termos de Serviço</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-white mb-2">Termos de Serviço</h1>
           <p className="text-sm text-muted-foreground mb-10">Última atualização: 15 de maio de 2026</p>
 
           {sections.map((s, i) => (
-            <div key={i} className={i > 0 ? "border-t border-border/40 pt-8 mt-8" : ""}>
-              <h2 className="text-xl font-semibold tracking-tight mb-3">{s.title}</h2>
+            <div key={i} className={i > 0 ? "pt-8 mt-8" : ""}>
+              <h2 className="text-xl font-semibold tracking-tight text-white mb-3">{s.title}</h2>
               <div className="text-muted-foreground leading-relaxed space-y-3 text-[15px]">
                 {s.content}
               </div>

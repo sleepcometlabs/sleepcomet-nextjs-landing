@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { Section } from "@/components/ui/section"
 import { Badge } from "@/components/ui/badge"
-import { BreadcrumbList } from "@/components/seo/breadcrumb-list"
 import { HowToSchema } from "@/components/seo/how-to-schema"
 import { ClipagemIACta } from "./clipagem-ia-cta"
 
@@ -84,54 +83,62 @@ const howToSteps = [
 
 export default function ClipagemIA() {
   return (
-    <div className="pt-20">
+    <div>
       <HowToSchema
         name="Como fazer clipagem de vídeo com IA"
         description="Passo a passo para cortar vídeos automaticamente usando inteligência artificial com o Sleepcomet."
         steps={howToSteps}
         totalTime="PT5M"
       />
-      <Section className="text-center">
+      <Section className="relative isolate -mt-16 overflow-hidden pt-24 pb-16 text-center sm:pb-28">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-brand/25 blur-[120px]"
+        />
         <div className="mx-auto max-w-4xl">
-          <BreadcrumbList items={[{ name: "Clipagem com IA", url: `${siteUrl}/clipagem-ia/` }]} />
           <Badge variant="secondary" className="mb-4">
             Processamento automatizado
           </Badge>
-          <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
             Clipagem com{" "}
-            <span className="text-primary">IA</span>
+            <span className="bg-linear-to-r from-brand to-brand/60 bg-clip-text text-transparent">
+              IA
+            </span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Seu vídeo é analisado por um pipeline de transcrição, detecção de cenas e pontuação de
-            segmentos. O resultado: clipes prontos com os melhores momentos em minutos.
+            Seu vídeo é analisado por um pipeline de transcrição, detecção de cenas e pontuação de segmentos.
+            <br />
+            O resultado: clipes prontos com os melhores momentos em minutos.
           </p>
         </div>
       </Section>
 
       <Section>
-        <div className="mx-auto grid max-w-5xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
-            <div
-              key={feature.title}
-              className="group rounded-xl border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-md"
-            >
-              <span className="text-3xl">{feature.icon}</span>
-              <h3 className="mt-4 font-semibold">{feature.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+        <div className="mx-auto max-w-5xl border-fade">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature) => (
+              <div
+                key={feature.title}
+                className="rounded-none border border-white/10 p-6"
+              >
+                <span className="text-3xl">{feature.icon}</span>
+                <h3 className="mt-4 font-semibold text-white">{feature.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </Section>
 
-      <Section className="bg-muted/30">
+      <Section>
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-center text-3xl font-bold">Como funciona o pipeline de clipagem</h2>
+          <h2 className="text-center text-3xl font-bold text-white">Como funciona o pipeline de clipagem</h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
             Todo o processo é automatizado. Você cola o link e volta para ver os resultados.
           </p>
-          <div className="mt-10 space-y-4">
+          <div className="mt-10 border-fade">
             {[
               {
                 step: "1",
@@ -161,13 +168,13 @@ export default function ClipagemIA() {
             ].map((item) => (
               <div
                 key={item.step}
-                className="flex items-start gap-4 rounded-lg border bg-card p-5"
+                className="flex items-start gap-4 rounded-none border border-white/10 p-5"
               >
-                <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+                <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand/10 text-sm font-bold text-brand">
                   {item.step}
                 </span>
                 <div>
-                  <h3 className="font-semibold">{item.title}</h3>
+                  <h3 className="font-semibold text-white">{item.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>
                 </div>
               </div>
@@ -177,7 +184,7 @@ export default function ClipagemIA() {
       </Section>
 
       <Section className="text-center">
-        <h2 className="text-2xl font-bold">Pronto para testar a clipagem com IA?</h2>
+        <h2 className="text-2xl font-bold text-white">Pronto para testar a clipagem com IA?</h2>
         <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
           Cole um link do YouTube e veja a mágica acontecer. Comece grátis, sem cartão de crédito.
         </p>

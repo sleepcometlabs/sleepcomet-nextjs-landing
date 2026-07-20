@@ -72,33 +72,44 @@ export function ContactContent() {
   return (
     <>
       <Section>
-        <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2">
+        <div className="mx-auto max-w-4xl border-fade">
+          <div className="grid sm:grid-cols-2">
           {contactMethods.map((method) => (
-            <Card key={method.title} className="hover:border-primary/30 transition-colors">
+            <Card
+              key={method.title}
+              className="rounded-none border border-white/10 bg-transparent ring-0"
+            >
               <CardContent className="p-5">
-                <CardTitle className="text-base">{method.title}</CardTitle>
+                <CardTitle className="text-base text-white">{method.title}</CardTitle>
                 <p className="mt-1 text-sm text-muted-foreground">{method.desc}</p>
                 <a
                   href={`mailto:${method.email}`}
-                  className="mt-3 inline-block text-sm font-medium text-primary underline underline-offset-4 hover:no-underline"
+                  className="mt-3 inline-block text-sm font-medium text-brand underline underline-offset-4 hover:no-underline"
                 >
                   {method.email}
                 </a>
               </CardContent>
             </Card>
           ))}
+          </div>
         </div>
       </Section>
 
-      <Section className="bg-muted/30">
+      <Section>
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-center text-2xl font-bold">Redes sociais</h2>
+          <h2 className="text-center text-2xl font-bold text-white">Redes sociais</h2>
           <p className="mt-2 text-center max-w-sm mx-auto text-muted-foreground">
             Acompanhe o Sleepcomet nas redes para dicas, novidades e conteúdo exclusivo.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-3">
             {socialLinks.map((link) => (
-              <Button key={link.name} variant="outline" size="sm" asChild>
+              <Button
+                key={link.name}
+                variant="outline"
+                size="sm"
+                className="border-white/10 bg-white/[0.03] hover:bg-white/[0.08]"
+                asChild
+              >
                 <a href={link.url} target="_blank" rel="noopener noreferrer">
                   {link.name}
                 </a>
@@ -110,32 +121,32 @@ export function ContactContent() {
 
       <Section>
         <div className="mx-auto max-w-xl">
-          <h2 className="text-center text-2xl font-bold">Envie uma mensagem</h2>
+          <h2 className="text-center text-2xl font-bold text-white">Envie uma mensagem</h2>
           <p className="mt-2 text-center max-w-sm mx-auto text-muted-foreground">
             Preferimos e-mails para garantir respostas rápidas, mas você também pode usar o
             formulário abaixo.
           </p>
           {sent ? (
-            <p className="mt-8 text-center text-green-500 font-medium">
+            <p className="mt-8 text-center text-green-400 font-medium">
               Mensagem enviada com sucesso! Responderemos em breve.
             </p>
           ) : (
             <form className="mt-8 space-y-4" onSubmit={handleFormSubmit}>
               <div className="grid gap-4 sm:grid-cols-2">
                 <div className="space-y-1">
-                  <label htmlFor="nome" className="text-sm font-medium">
+                  <label htmlFor="nome" className="text-sm font-medium text-white">
                     Nome
                   </label>
                   <input
                     id="nome"
                     name="nome"
                     required
-                    className="w-full rounded-lg border bg-background px-3 py-2 text-sm outline-none focus:border-primary"
+                    className="w-full rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-white outline-none placeholder:text-muted-foreground focus:border-brand"
                     placeholder="Seu nome"
                   />
                 </div>
                 <div className="space-y-1">
-                  <label htmlFor="email" className="text-sm font-medium">
+                  <label htmlFor="email" className="text-sm font-medium text-white">
                     Email
                   </label>
                   <input
@@ -143,19 +154,19 @@ export function ContactContent() {
                     name="email"
                     type="email"
                     required
-                    className="w-full rounded-lg border bg-background px-3 py-2 text-sm outline-none focus:border-primary"
+                    className="w-full rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-white outline-none placeholder:text-muted-foreground focus:border-brand"
                     placeholder="seu@email.com"
                   />
                 </div>
               </div>
               <div className="space-y-1">
-                <label htmlFor="assunto" className="text-sm font-medium">
+                <label htmlFor="assunto" className="text-sm font-medium text-white">
                   Assunto
                 </label>
                 <select
                   id="assunto"
                   name="assunto"
-                  className="w-full rounded-lg border bg-background px-3 py-2 text-sm outline-none focus:border-primary"
+                  className="w-full rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-white outline-none focus:border-brand"
                 >
                   <option>Suporte</option>
                   <option>Comercial</option>
@@ -165,7 +176,7 @@ export function ContactContent() {
                 </select>
               </div>
               <div className="space-y-1">
-                <label htmlFor="mensagem" className="text-sm font-medium">
+                <label htmlFor="mensagem" className="text-sm font-medium text-white">
                   Mensagem
                 </label>
                 <textarea
@@ -173,7 +184,7 @@ export function ContactContent() {
                   name="mensagem"
                   rows={5}
                   required
-                  className="w-full rounded-lg border bg-background px-3 py-2 text-sm outline-none focus:border-primary resize-y"
+                  className="w-full rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2 text-sm text-white outline-none placeholder:text-muted-foreground focus:border-brand resize-y"
                   placeholder="Escreva sua mensagem..."
                 />
               </div>

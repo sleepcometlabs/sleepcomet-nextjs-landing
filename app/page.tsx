@@ -2,7 +2,7 @@ import { Navbar } from "@/components/landing/navbar"
 import { Hero } from "@/components/landing/hero"
 import { ProductDemo } from "@/components/landing/product-demo"
 import { UrlCaptureProvider } from "@/components/landing/url-capture-context"
-import { StickyUrlBar } from "@/components/landing/sticky-url-bar"
+import { StickyUrlBar } from "@/components/landing/sticky-url-bar-lazy"
 import dynamic from "next/dynamic"
 
 const FeaturesSectionDemo = dynamic(() => import("@/components/features-section-demo-2"))
@@ -25,8 +25,8 @@ export default function Home() {
         <HowItWorks />
         <Integrations />
         <Comparison />
-        <Pricing />
         <FAQSection />
+        <Pricing />
         <Cta />
         <Footer />
       </main>

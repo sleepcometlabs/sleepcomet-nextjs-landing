@@ -1,9 +1,10 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Section } from "@/components/ui/section"
-import { Button } from "@/components/ui/button"
+import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { Badge } from "@/components/ui/badge"
-import { BreadcrumbList } from "@/components/seo/breadcrumb-list"
 import { HowToSchema } from "@/components/seo/how-to-schema"
+import { APP_URL } from "@/lib/config"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 
@@ -71,53 +72,63 @@ const howToSteps = [
 
 export default function LegendasAutomaticas() {
   return (
-    <div className="pt-20">
+    <div>
       <HowToSchema
         name="Como adicionar legendas automáticas em vídeos"
         description="Passo a passo para gerar legendas automáticas em português para seus vídeos usando inteligência artificial."
         steps={howToSteps}
         totalTime="PT3M"
       />
-      <Section className="text-center">
+      <Section className="relative isolate -mt-16 overflow-hidden pt-24 pb-16 text-center sm:pb-28">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-brand/25 blur-[120px]"
+        />
         <div className="mx-auto max-w-4xl">
-          <BreadcrumbList items={[{ name: "Legendas automáticas", url: `${siteUrl}/legendas-automaticas/` }]} />
           <Badge variant="secondary" className="mb-4">
             Faster-Whisper
           </Badge>
-          <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
             Legendas{" "}
-            <span className="text-primary">automáticas</span> para vídeos
+            <span className="bg-linear-to-r from-brand to-brand/60 bg-clip-text text-transparent">
+              automáticas
+            </span>
+            <br />
+            para vídeos
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Transcrição precisa em português com timestamps palavra por palavra. Legendas
-            sincronizadas geradas automaticamente em cada clipe.
+            Transcrição precisa em português com timestamps palavra por palavra.
+            <br />
+            Legendas sincronizadas geradas automaticamente em cada clipe.
           </p>
         </div>
       </Section>
 
       <Section>
-        <div className="mx-auto grid max-w-4xl gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {features.map((feature) => (
-            <div
-              key={feature.title}
-              className="rounded-xl border bg-card p-6 transition-colors hover:border-primary/30"
-            >
-              <h3 className="font-semibold">{feature.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                {feature.description}
-              </p>
-            </div>
-          ))}
+        <div className="mx-auto max-w-4xl border-fade">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3">
+            {features.map((feature) => (
+              <div
+                key={feature.title}
+                className="rounded-none border border-white/10 p-6"
+              >
+                <h3 className="font-semibold text-white">{feature.title}</h3>
+                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                  {feature.description}
+                </p>
+              </div>
+            ))}
+          </div>
         </div>
       </Section>
 
-      <Section className="bg-muted/30">
+      <Section>
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-center text-3xl font-bold">Como funciona a geração de legendas</h2>
+          <h2 className="text-center text-3xl font-bold text-white">Como funciona a geração de legendas</h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
             A transcrição é parte do pipeline principal de clipagem.
           </p>
-          <div className="mt-8 space-y-4">
+          <div className="mt-8 border-fade">
             {[
               {
                 step: "1",
@@ -142,13 +153,13 @@ export default function LegendasAutomaticas() {
             ].map((item) => (
               <div
                 key={item.step}
-                className="flex items-start gap-4 rounded-lg border bg-card p-5"
+                className="flex items-start gap-4 rounded-none border border-white/10 p-5"
               >
-                <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary">
+                <span className="flex size-8 shrink-0 items-center justify-center rounded-full bg-brand/10 text-sm font-bold text-brand">
                   {item.step}
                 </span>
                 <div>
-                  <h3 className="font-semibold">{item.title}</h3>
+                  <h3 className="font-semibold text-white">{item.title}</h3>
                   <p className="mt-1 text-sm text-muted-foreground">{item.desc}</p>
                 </div>
               </div>
@@ -159,29 +170,31 @@ export default function LegendasAutomaticas() {
 
       <Section>
         <div className="mx-auto max-w-3xl">
-          <h2 className="text-center text-3xl font-bold">Formatos de exportação de legendas</h2>
+          <h2 className="text-center text-3xl font-bold text-white">Formatos de exportação de legendas</h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
             As legendas são geradas em dois formatos, dependendo da sua necessidade.
           </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            {[
-              {
-                format: "SRT",
-                desc: "Arquivo de legenda separado com timestamps. Compatível com YouTube, Instagram, TikTok e editores de vídeo.",
-              },
-              {
-                format: "Embutidas (hardcoded)",
-                desc: "Legendas queimadas diretamente no vídeo. Pronto para publicar sem arquivo extra.",
-              },
-            ].map((item) => (
-              <div
-                key={item.format}
-                className="rounded-xl border bg-card p-5 text-center transition-colors hover:border-primary/30"
-              >
-                <span className="font-mono text-lg font-bold text-primary">{item.format}</span>
-                <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
-              </div>
-            ))}
+          <div className="mt-8 border-fade">
+            <div className="grid sm:grid-cols-2">
+              {[
+                {
+                  format: "SRT",
+                  desc: "Arquivo de legenda separado com timestamps. Compatível com YouTube, Instagram, TikTok e editores de vídeo.",
+                },
+                {
+                  format: "Embutidas (hardcoded)",
+                  desc: "Legendas queimadas diretamente no vídeo. Pronto para publicar sem arquivo extra.",
+                },
+              ].map((item) => (
+                <div
+                  key={item.format}
+                  className="rounded-none border border-white/10 p-5 text-center"
+                >
+                  <span className="font-mono text-lg font-bold text-brand">{item.format}</span>
+                  <p className="mt-2 text-sm text-muted-foreground">{item.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
           <p className="mt-6 text-center text-sm text-muted-foreground">
             Atualmente o Sleepcomet suporta transcrição em português. A detecção de idioma é
@@ -191,12 +204,14 @@ export default function LegendasAutomaticas() {
       </Section>
 
       <Section className="text-center">
-        <h2 className="text-2xl font-bold">Gere legendas automáticas grátis</h2>
+        <h2 className="text-2xl font-bold text-white">Gere legendas automáticas grátis</h2>
         <p className="mx-auto mt-3 max-w-xl text-muted-foreground">
           Cole um link do YouTube ou faça upload e receba legendas sincronizadas em segundos.
         </p>
-        <div className="mt-6">
-          <Button size="lg">Começar grátis</Button>
+        <div className="mt-6 flex justify-center">
+          <Link href={APP_URL}>
+            <ShimmerButton>Começar grátis</ShimmerButton>
+          </Link>
         </div>
       </Section>
     </div>

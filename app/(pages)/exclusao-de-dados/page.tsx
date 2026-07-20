@@ -36,7 +36,7 @@ const sections = [
         <ul className="list-disc pl-5 space-y-1 mt-2">
           <li>
             Enviando um e-mail para{" "}
-            <a href="mailto:privacidade@sleepcomet.com" className="text-primary underline underline-offset-4 hover:no-underline">
+            <a href="mailto:privacidade@sleepcomet.com" className="text-brand underline underline-offset-4 hover:no-underline">
               privacidade@sleepcomet.com
             </a>{" "}
             com o assunto "Exclusão de dados", a partir do e-mail cadastrado na sua conta.
@@ -58,7 +58,7 @@ const sections = [
       <p>
         Confirmamos o recebimento do seu pedido em até 48 horas e concluímos a exclusão em até 30
         dias corridos, conforme previsto na nossa{" "}
-        <a href="/privacy" className="text-primary underline underline-offset-4 hover:no-underline">
+        <a href="/privacy" className="text-brand underline underline-offset-4 hover:no-underline">
           Política de Privacidade
         </a>
         . Dados que precisamos manter por obrigação legal ou fiscal (ex: registros de cobrança) são
@@ -72,7 +72,7 @@ const sections = [
     content: (
       <p>
         <strong>E-mail:</strong>{" "}
-        <a href="mailto:privacidade@sleepcomet.com" className="text-primary underline underline-offset-4 hover:no-underline">
+        <a href="mailto:privacidade@sleepcomet.com" className="text-brand underline underline-offset-4 hover:no-underline">
           privacidade@sleepcomet.com
         </a>
       </p>
@@ -85,12 +85,12 @@ export default function ExclusaoDeDados() {
     <div className="pt-20">
       <Section>
         <div className="mx-auto max-w-3xl">
-          <h1 className="text-4xl font-bold tracking-tight mb-2">Exclusão de Dados</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-white mb-2">Exclusão de Dados</h1>
           <p className="text-sm text-muted-foreground mb-10">Última atualização: 3 de julho de 2026</p>
 
           {sections.map((s, i) => (
-            <div key={i} className={i > 0 ? "border-t border-border/40 pt-8 mt-8" : ""}>
-              <h2 className="text-xl font-semibold tracking-tight mb-3">{s.title}</h2>
+            <div key={i} className={i > 0 ? "pt-8 mt-8" : ""}>
+              <h2 className="text-xl font-semibold tracking-tight text-white mb-3">{s.title}</h2>
               <div className="text-muted-foreground leading-relaxed space-y-3 text-[15px]">
                 {s.content}
               </div>

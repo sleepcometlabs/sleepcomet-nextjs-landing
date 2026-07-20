@@ -18,7 +18,7 @@ export function ProductDemo() {
         <div className="w-full overflow-hidden rounded-2xl border border-white/10 shadow-2xl shadow-black/40">
           <video
             src="/how-it-works-demo.mp4"
-            poster="/how-it-works-demo-poster.jpg"
+            poster="/how-it-works-demo-poster.webp"
             autoPlay
             loop
             muted

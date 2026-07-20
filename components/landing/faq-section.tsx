@@ -79,7 +79,7 @@ export function FAQSection({ extraFaqs = [] }: FAQSectionProps) {
           </p>
         </div>
 
-        <Accordion type="single" collapsible className="w-full">
+        <Accordion type="single" collapsible className="mx-auto w-full max-w-2xl">
           {faqs.map((faq, i) => (
             <AccordionItem value={`item-${i}`} key={i}>
               <AccordionTrigger className="text-left text-base">

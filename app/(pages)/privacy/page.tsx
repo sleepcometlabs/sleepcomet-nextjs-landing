@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Section } from "@/components/ui/section"
+import { CookieSettingsButton } from "@/components/landing/cookie-settings-button"
 
 export const metadata: Metadata = {
   title: "Política de Privacidade",
@@ -41,7 +42,7 @@ const sections = [
           <li>Dados de uso: páginas visitadas, funcionalidades utilizadas, duração das sessões.</li>
           <li>Dados do dispositivo: tipo de navegador, sistema operacional.</li>
           <li>Dados de rede: endereço IP, localização aproximada (cidade/país).</li>
-          <li>Cookies e tecnologias similares: conforme detalhado em nossa <a href="/cookies" className="text-primary underline underline-offset-4 hover:no-underline">Política de Cookies</a>.</li>
+          <li>Cookies e tecnologias similares: gerencie suas preferências a qualquer momento em <CookieSettingsButton className="text-brand underline underline-offset-4 hover:no-underline">Configurações de cookies</CookieSettingsButton>.</li>
         </ul>
       </>
     ),
@@ -105,7 +106,7 @@ const sections = [
         </ul>
         <p className="mt-4">
           Para exercer seus direitos, entre em contato:{" "}
-          <a href="mailto:privacidade@sleepcomet.com" className="text-primary underline underline-offset-4 hover:no-underline">privacidade@sleepcomet.com</a>
+          <a href="mailto:privacidade@sleepcomet.com" className="text-brand underline underline-offset-4 hover:no-underline">privacidade@sleepcomet.com</a>
         </p>
       </>
     ),
@@ -147,7 +148,7 @@ const sections = [
       <div className="space-y-1">
         <p>
           <strong>E-mail:</strong>{" "}
-          <a href="mailto:privacidade@sleepcomet.com" className="text-primary underline underline-offset-4 hover:no-underline">privacidade@sleepcomet.com</a>
+          <a href="mailto:privacidade@sleepcomet.com" className="text-brand underline underline-offset-4 hover:no-underline">privacidade@sleepcomet.com</a>
         </p>
       </div>
     ),
@@ -159,12 +160,12 @@ export default function Privacy() {
     <div className="pt-20">
       <Section>
         <div className="mx-auto max-w-3xl">
-          <h1 className="text-4xl font-bold tracking-tight mb-2">Política de Privacidade</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-white mb-2">Política de Privacidade</h1>
           <p className="text-sm text-muted-foreground mb-10">Última atualização: 15 de maio de 2026</p>
 
           {sections.map((s, i) => (
-            <div key={i} className={i > 0 ? "border-t border-border/40 pt-8 mt-8" : ""}>
-              <h2 className="text-xl font-semibold tracking-tight mb-3">{s.title}</h2>
+            <div key={i} className={i > 0 ? "pt-8 mt-8" : ""}>
+              <h2 className="text-xl font-semibold tracking-tight text-white mb-3">{s.title}</h2>
               <div className="text-muted-foreground leading-relaxed space-y-3 text-[15px]">
                 {s.content}
               </div>

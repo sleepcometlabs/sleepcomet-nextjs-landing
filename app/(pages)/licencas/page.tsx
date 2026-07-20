@@ -76,29 +76,29 @@ export default function Licencas() {
     <div className="pt-20">
       <Section>
         <div className="mx-auto max-w-4xl">
-          <h1 className="mb-2 text-center text-4xl font-bold tracking-tight">Licenças</h1>
+          <h1 className="mb-2 text-center text-4xl font-bold tracking-tight text-white sm:text-5xl">Licenças</h1>
           <p className="mx-auto mb-12 max-w-xl text-center text-muted-foreground">
             O Sleepcomet é construído sobre os ombros de gigantes. Abaixo estão as licenças das
             principais bibliotecas e ferramentas que utilizamos.
           </p>
 
-          <div className="overflow-hidden rounded-xl border">
+          <div className="overflow-hidden rounded-none border border-fade">
             <table className="w-full text-left text-sm">
               <thead>
-                <tr className="border-b bg-muted/50">
-                  <th className="p-4 font-medium">Projeto</th>
-                  <th className="p-4 font-medium">Descrição</th>
-                  <th className="p-4 font-medium">Licença</th>
-                  <th className="p-4 font-medium">Repositório</th>
+                <tr className="border-b border-white/10 bg-white/[0.04]">
+                  <th className="p-4 font-medium text-white">Projeto</th>
+                  <th className="p-4 font-medium text-white">Descrição</th>
+                  <th className="p-4 font-medium text-white">Licença</th>
+                  <th className="p-4 font-medium text-white">Repositório</th>
                 </tr>
               </thead>
               <tbody>
                 {licenses.map((lib) => (
-                  <tr key={lib.name} className="border-b last:border-0 hover:bg-muted/20">
-                    <td className="p-4 font-medium">{lib.name}</td>
+                  <tr key={lib.name} className="border-b border-white/10 last:border-0">
+                    <td className="p-4 font-medium text-white">{lib.name}</td>
                     <td className="p-4 text-muted-foreground">{lib.description}</td>
                     <td className="p-4">
-                      <span className="rounded-md bg-muted px-2 py-0.5 font-mono text-xs">
+                      <span className="rounded-md bg-white/[0.06] px-2 py-0.5 font-mono text-xs text-white">
                         {lib.license}
                       </span>
                     </td>
@@ -107,7 +107,7 @@ export default function Licencas() {
                         href={`https://${lib.repo}`}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="text-primary underline underline-offset-4 hover:no-underline"
+                        className="text-brand underline underline-offset-4 hover:no-underline"
                       >
                         {lib.repo}
                       </a>
@@ -118,8 +118,8 @@ export default function Licencas() {
             </table>
           </div>
 
-          <div className="mt-10 rounded-xl border bg-card p-6 text-center">
-            <h2 className="text-lg font-semibold">Código aberto</h2>
+          <div className="mt-10 rounded-none border border-fade p-6 text-center">
+            <h2 className="text-lg font-semibold text-white">Código aberto</h2>
             <p className="mt-2 text-sm text-muted-foreground">
               Parte do Sleepcomet é open source. Contribuímos ativamente com a comunidade de
               código aberto e acreditamos na transparência como valor fundamental.
@@ -128,16 +128,16 @@ export default function Licencas() {
               href="https://github.com/sleepcometlabs"
               target="_blank"
               rel="noopener noreferrer"
-            className="mt-4 inline-block text-sm font-medium text-primary underline underline-offset-4 hover:no-underline"
-          >
-            github.com/sleepcomet-com →
-          </a>
+              className="mt-4 inline-block text-sm font-medium text-brand underline underline-offset-4 hover:no-underline"
+            >
+              github.com/sleepcomet-com →
+            </a>
           </div>
 
           <p className="mt-10 text-center text-xs text-muted-foreground">
             Esta lista não é exaustiva. Para a lista completa de dependências, consulte os
             arquivos de licenciamento em nossos repositórios. Em caso de dúvidas sobre licenças,
-            entre em contato: <a href="mailto:legal@sleepcomet.com" className="text-primary underline underline-offset-4">legal@sleepcomet.com</a>
+            entre em contato: <a href="mailto:legal@sleepcomet.com" className="text-brand underline underline-offset-4">legal@sleepcomet.com</a>
           </p>
         </div>
       </Section>

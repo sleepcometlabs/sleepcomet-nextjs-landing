@@ -4,7 +4,7 @@ import { AnimatePresence, motion } from "motion/react"
 import { Menu, X } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { APP_URL } from "@/lib/config"
 import {
   NavigationMenu,
@@ -15,7 +15,18 @@ import {
   NavigationMenuTrigger,
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
 import { cn } from "@/lib/utils"
+
+// Evento usado só pra avisar a StickyUrlBar (montada fora da árvore da
+// Navbar) que o menu fullscreen abriu/fechou, sem precisar de um contexto
+// global — a Navbar aparece em páginas que não têm UrlCaptureProvider.
+export const MOBILE_MENU_EVENT = "sc:mobile-menu"
 
 const navItems = [
   {
@@ -45,11 +56,21 @@ const navItems = [
 export function Navbar() {
   const [open, setOpen] = useState(false)
 
+  // Trava o scroll do body enquanto o menu fullscreen mobile está aberto,
+  // e avisa a StickyUrlBar pra sumir enquanto ele estiver aberto.
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : ""
+    window.dispatchEvent(new CustomEvent(MOBILE_MENU_EVENT, { detail: open }))
+    return () => {
+      document.body.style.overflow = ""
+    }
+  }, [open])
+
   return (
     <>
-      {/* Fundo preto sólido cobrindo a largura toda; conteúdo alinhado ao
-          mesmo max-w-6xl das outras seções da página. */}
-      <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between bg-black px-6 py-5">
+      {/* Fundo preto translúcido com blur cobrindo a largura toda; conteúdo
+          alinhado ao mesmo max-w-6xl das outras seções da página. */}
+      <div className="fixed top-0 left-0 right-0 z-50 flex line-fade-b items-center justify-between bg-black/30 px-6 py-5 backdrop-blur-xl">
         <div className="relative mx-auto flex w-full max-w-6xl items-center justify-between">
           <Link href="/" className="relative z-10 flex items-center gap-2">
             <Image src="/logo.png" alt="Sleepcomet" width={319} height={259} className="h-4 w-auto" />
@@ -117,39 +138,57 @@ export function Navbar() {
       <AnimatePresence>
         {open && (
           <motion.div
-            initial={{ opacity: 0, y: -12 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -12 }}
-            transition={{ duration: 0.2 }}
-            className="fixed inset-x-4 top-18 z-40 max-h-[70vh] overflow-y-auto rounded-2xl border border-border/40 bg-background/95 p-4 backdrop-blur-2xl shadow-lg md:hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.25, ease: "easeInOut" }}
+            className="fixed inset-0 z-40 flex flex-col overflow-y-auto bg-black md:hidden"
           >
-            <nav className="flex flex-col gap-1">
-              <Link href="/" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted">
+            <nav className="mx-auto flex w-full max-w-sm flex-1 flex-col justify-center px-6 pt-24 pb-16">
+              <Link
+                href="/"
+                onClick={() => setOpen(false)}
+                className="pb-6 text-3xl font-semibold tracking-tight text-white"
+              >
                 Início
               </Link>
-              {navItems.map((group) => (
-                <div key={group.label} className="pt-2">
-                  <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-muted-foreground">{group.label}</p>
-                  {group.items.map((item) => (
-                    <Link
-                      key={item.href}
-                      href={item.href}
-                      onClick={() => setOpen(false)}
-                      className="block rounded-lg px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-                    >
-                      {item.label}
-                    </Link>
-                  ))}
-                </div>
-              ))}
-              <Link href="/precos" onClick={() => setOpen(false)} className="rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground">
+
+              <Accordion type="single" collapsible className="w-full">
+                {navItems.map((group) => (
+                  <AccordionItem key={group.label} value={group.label}>
+                    <AccordionTrigger className="text-2xl font-semibold tracking-tight text-white">
+                      {group.label}
+                    </AccordionTrigger>
+                    <AccordionContent>
+                      <div className="flex flex-col gap-4 pb-4 pl-1">
+                        {group.items.map((item) => (
+                          <Link
+                            key={item.href}
+                            href={item.href}
+                            onClick={() => setOpen(false)}
+                            className="text-lg text-white/70 hover:text-white"
+                          >
+                            {item.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+
+              <Link
+                href="/precos"
+                onClick={() => setOpen(false)}
+                className="relative line-fade-t mt-2 pt-6 text-3xl font-semibold tracking-tight text-white"
+              >
                 Preços
               </Link>
-              <hr className="my-2 border-border/50" />
+
               <Link
                 href={APP_URL}
                 onClick={() => setOpen(false)}
-                className="rounded-lg px-3 py-2.5 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                className="mt-8 inline-flex w-fit items-center justify-center rounded-full bg-[#333333] px-6 py-3 text-base font-medium text-white hover:bg-[#3f3f3f]"
               >
                 Entrar
               </Link>

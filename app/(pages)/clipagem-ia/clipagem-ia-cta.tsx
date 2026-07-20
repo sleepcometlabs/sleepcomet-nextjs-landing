@@ -1,11 +1,11 @@
 "use client"
 
-import { Button } from "@/components/ui/button"
+import { ShimmerButton } from "@/components/ui/shimmer-button"
 
 export function ClipagemIACta({ appUrl }: { appUrl: string }) {
   return (
-    <Button size="lg" className="mt-8" asChild>
-      <a href={appUrl}>Testar clipagem grátis</a>
-    </Button>
+    <a href={appUrl} className="mt-8 inline-block">
+      <ShimmerButton>Testar clipagem grátis</ShimmerButton>
+    </a>
   )
 }

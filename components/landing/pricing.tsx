@@ -2,7 +2,7 @@
 
 import NumberFlow from "@number-flow/react"
 import { Badge } from "@/components/ui/badge"
-import { Button } from "@/components/ui/button"
+import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { cn } from "@/lib/utils"
 import { ArrowRight, BadgeCheck, Zap } from "lucide-react"
 import { useState } from "react"
@@ -124,8 +124,8 @@ export function Pricing() {
         </p>
         <Tabs defaultValue={frequency} onValueChange={setFrequency}>
           <TabsList>
-            <TabsTrigger value="monthly">Mensal</TabsTrigger>
-            <TabsTrigger value="yearly">
+            <TabsTrigger value="monthly" className="cursor-pointer">Mensal</TabsTrigger>
+            <TabsTrigger value="yearly" className="cursor-pointer">
               Anual
               <Badge variant="secondary" className="ml-1.5">20% off</Badge>
             </TabsTrigger>
@@ -178,13 +178,13 @@ export function Pricing() {
                     : `${APP_URL}/checkout?plan=${plan.id}&frequency=${frequency}`
                 }
               >
-                <Button
+                <ShimmerButton
                   className="w-full"
-                  variant={plan.popular ? "default" : "outline"}
+                  background={plan.popular ? "#501AFB" : "#333333"}
                 >
                   {plan.cta}
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </Button>
+                </ShimmerButton>
               </a>
 
               <div className="mt-6 grid gap-2">

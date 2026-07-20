@@ -14,17 +14,18 @@ export function Hero() {
     <section id="hero" className="relative isolate flex min-h-screen items-center justify-center overflow-hidden bg-black px-4 pt-20">
 
       {/* GLOW EM ARCO — asset com fundo já transparente (ver
-          public/hero-arc.png), só o traço/brilho roxo por cima do preto.
+          public/hero-arc.webp), só o traço/brilho roxo por cima do preto.
           <img> em vez de background-image: mais previsível de depurar. */}
       <Image
-        src="/hero-arc.png"
+        src="/hero-arc.webp"
         alt=""
         aria-hidden="true"
         width={1728}
         height={600}
         priority
+        fetchPriority="high"
         unoptimized
-        className="pointer-events-none absolute left-1/2 top-[49%] -z-10 h-auto w-[2400px] max-w-none -translate-x-1/2"
+        className="pointer-events-none absolute left-1/2 top-[49%] -z-10 h-auto w-[1200px] max-w-none -translate-x-1/2 sm:w-[1800px] lg:w-[2400px]"
       />
 
       {/* FADE */}
@@ -45,7 +46,7 @@ export function Hero() {
           os melhores momentos, gera legendas e deixa tudo pronto para publicar.
         </p>
 
-        <UrlCapturePill variant="dark" className="w-full px-4 sm:px-0" />
+        <UrlCapturePill className="w-full px-4 sm:px-0" />
 
       </div>
     </section>

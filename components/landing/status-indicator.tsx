@@ -8,7 +8,7 @@ import {
   HoverCardContent,
 } from "@/components/ui/hover-card"
 
-const STATUS_PAGE_URL = "https://stats.uptimerobot.com/UzrhpUosXP"
+const STATUS_PAGE_URL = "/status-pages"
 
 interface Monitor {
   name: string
@@ -37,6 +37,12 @@ export function StatusIndicator() {
   const [data, setData] = useState<StatusResponse | null>(null)
 
   useEffect(() => {
+    // /status é uma Cloudflare Pages Function (functions/status.js) — só
+    // existe rodando sob Wrangler/produção. `next dev` não serve o diretório
+    // functions/, então o fetch sempre daria 404 localmente; pulamos aqui
+    // pra não gerar ruído no log, e o indicador cai no "up" otimista.
+    if (process.env.NODE_ENV !== "production") return
+
     let cancelled = false
     const load = () => {
       fetch("/status")
@@ -72,8 +78,6 @@ export function StatusIndicator() {
       <HoverCardTrigger asChild>
         <Link
           href={STATUS_PAGE_URL}
-          target="_blank"
-          rel="noopener noreferrer"
           className="flex items-center gap-2 text-xs text-white/80 transition-colors hover:text-white"
         >
           {indicator}

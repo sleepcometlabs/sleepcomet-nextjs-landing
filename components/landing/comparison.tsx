@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils"
+
 const comparisonData = [
   { aspect: "Tempo de edição", sleepcomet: "2 minutos", manual: "Horas" },
   { aspect: "Detecção de melhores momentos", sleepcomet: "Automática por IA", manual: "Manual (assistir tudo)" },
@@ -21,10 +23,19 @@ export function Comparison() {
         </div>
 
         <div className="w-full">
+          <div className="grid grid-cols-3 gap-4 px-4 pb-3 text-xs font-semibold tracking-wide text-white/50 uppercase">
+            <span></span>
+            <span className="text-brand">Com IA</span>
+            <span>À Mão</span>
+          </div>
+
           {comparisonData.map((row, i) => (
             <div
               key={row.aspect}
-              className="grid grid-cols-3 gap-4 border-t border-border/40 px-4 py-3 text-sm last:border-b"
+              className={cn(
+                "relative grid grid-cols-3 gap-4 line-fade-t px-4 py-3 text-sm",
+                i === comparisonData.length - 1 && "line-fade-b"
+              )}
             >
               <span className="text-muted-foreground">{row.aspect}</span>
               <span className="font-medium text-foreground">{row.sleepcomet}</span>

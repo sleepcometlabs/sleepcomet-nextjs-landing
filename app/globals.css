@@ -239,3 +239,76 @@
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities {
+  /* Linha horizontal que esmaece nas duas pontas, em vez de um border-t/b
+     sólido — usada como separador de seção "sumindo no fundo". */
+  /* Não define position aqui de propósito — colide com "fixed"/"absolute"
+     de quem já usa a classe (ex: navbar), sobrescrevendo o positioning
+     original por ter a mesma especificidade e vir depois na cascata.
+     Sempre combine com "relative" no elemento quando ele ainda não for
+     positioned (fixed/absolute/relative/sticky). */
+  .line-fade-t,
+  .line-fade-b {
+    border-top: none;
+    border-bottom: none;
+  }
+  .line-fade-t::before,
+  .line-fade-b::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.14), transparent);
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+  }
+  .line-fade-t::before {
+    top: 0;
+  }
+  .line-fade-b::after {
+    bottom: 0;
+  }
+
+  /* Some quando o item (accordion, etc.) está aberto — data-state vem do
+     Radix no mesmo elemento que tem a classe .line-fade-b. */
+  [data-state="open"].line-fade-b::after {
+    opacity: 0;
+  }
+
+  /* Modificador: em vez de sumir nas duas pontas, começa sólida à esquerda
+     (onde o conteúdo começa) e some só à direita. */
+  .line-fade-left::before,
+  .line-fade-left::after {
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.16), transparent 70%);
+  }
+
+  /* Borda de caixa (4 lados) que esmaece em direção aos cantos, em vez de
+     uma cor sólida uniforme — "some" nos cantos ao invés de fechar o
+     retângulo com força total. */
+  .border-fade {
+    position: relative;
+    border-color: transparent !important;
+  }
+  .border-fade::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    padding: 1px;
+    background: linear-gradient(
+      135deg,
+      transparent,
+      rgba(255, 255, 255, 0.16) 35%,
+      rgba(255, 255, 255, 0.16) 65%,
+      transparent
+    );
+    -webkit-mask:
+      linear-gradient(#000 0 0) content-box,
+      linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+}

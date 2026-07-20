@@ -3,12 +3,12 @@ import dynamic from "next/dynamic"
 import { PodcastHero, PODCAST_ROTATING_MESSAGES } from "./podcast-hero"
 import { PodcastFeatures } from "./podcast-features"
 import { PodcastHowItWorks } from "./podcast-how-it-works"
+import { ProductDemo } from "@/components/landing/product-demo"
 import { UrlCaptureProvider } from "@/components/landing/url-capture-context"
-import { StickyUrlBar } from "@/components/landing/sticky-url-bar"
+import { StickyUrlBar } from "@/components/landing/sticky-url-bar-lazy"
 import { SITE_URL } from "@/lib/config"
 
 const Comparison = dynamic(() => import("@/components/landing/comparison").then((mod) => mod.Comparison))
-const Pricing = dynamic(() => import("@/components/landing/pricing").then((mod) => mod.Pricing))
 const FAQSection = dynamic(() => import("@/components/landing/faq-section").then((mod) => mod.FAQSection))
 const Cta = dynamic(() => import("@/components/landing/cta").then((mod) => mod.Cta))
 
@@ -42,10 +42,10 @@ export default function PodcastLanding() {
   return (
     <UrlCaptureProvider>
       <PodcastHero />
+      <ProductDemo />
       <PodcastFeatures />
       <PodcastHowItWorks />
       <Comparison />
-      <Pricing />
       <FAQSection extraFaqs={PODCAST_FAQS} />
       <Cta />
       <StickyUrlBar messages={PODCAST_ROTATING_MESSAGES} />

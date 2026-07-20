@@ -39,19 +39,21 @@ export function PodcastFeatures() {
           e programa de conversa.
         </p>
       </div>
-      <div className="mx-auto mt-10 grid max-w-5xl gap-6 sm:grid-cols-2">
-        {features.map((feature) => (
-          <div
-            key={feature.title}
-            className="group rounded-xl border bg-card p-6 transition-all hover:border-primary/30 hover:shadow-md"
-          >
-            <span className="text-3xl">{feature.icon}</span>
-            <h3 className="mt-4 font-semibold">{feature.title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-              {feature.description}
-            </p>
-          </div>
-        ))}
+      <div className="mx-auto mt-10 max-w-5xl border-fade">
+        <div className="grid sm:grid-cols-2">
+          {features.map((feature) => (
+            <div
+              key={feature.title}
+              className="rounded-none border border-white/10 p-6"
+            >
+              <span className="text-3xl">{feature.icon}</span>
+              <h3 className="mt-4 font-semibold text-white">{feature.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                {feature.description}
+              </p>
+            </div>
+          ))}
+        </div>
       </div>
     </Section>
   )

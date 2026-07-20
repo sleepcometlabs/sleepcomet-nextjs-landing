@@ -1,9 +1,10 @@
 import type { Metadata } from "next"
+import Link from "next/link"
 import { Section } from "@/components/ui/section"
-import { Button } from "@/components/ui/button"
+import { ShimmerButton } from "@/components/ui/shimmer-button"
 import { cn } from "@/lib/utils"
-import { BreadcrumbList } from "@/components/seo/breadcrumb-list"
 import { HowToSchema } from "@/components/seo/how-to-schema"
+import { APP_URL } from "@/lib/config"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 
@@ -99,23 +100,30 @@ const pipelineSteps = [
 
 export default function ComoFunciona() {
   return (
-    <div className="pt-20">
+    <div>
       <HowToSchema
         name="Como cortar vídeo com IA em 3 passos"
         description="Aprenda a transformar vídeos longos em clipes virais usando inteligência artificial. Faça upload, a IA analisa e gera clipes automaticamente."
         steps={howToSteps}
         totalTime="PT5M"
       />
-      <Section className="text-center">
+      <Section className="relative isolate -mt-16 overflow-hidden pt-24 pb-16 text-center sm:pb-28">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-brand/25 blur-[120px]"
+        />
         <div className="mx-auto max-w-4xl">
-          <BreadcrumbList items={[{ name: "Como funciona", url: `${siteUrl}/como-funciona/` }]} />
-          <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
             Como{" "}
-            <span className="text-primary">cortar vídeo</span> com IA
+            <span className="bg-linear-to-r from-brand to-brand/60 bg-clip-text text-transparent">
+              cortar vídeo
+            </span>{" "}
+            com IA
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Do upload aos clipes prontos em minutos. Transcrição, análise e corte automatizados com
-            inteligência artificial.
+            Do upload aos clipes prontos em minutos.
+            <br />
+            Transcrição, análise e corte automatizados com inteligência artificial.
           </p>
         </div>
       </Section>
@@ -141,39 +149,43 @@ export default function ComoFunciona() {
         </div>
       </Section>
 
-      <Section className="bg-muted/30">
+      <Section>
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-center text-3xl font-bold">Pipeline técnico de clipagem</h2>
+          <h2 className="text-center text-3xl font-bold text-white">Pipeline técnico de clipagem</h2>
           <p className="mx-auto mt-3 max-w-xl text-center text-muted-foreground">
             As etapas que seu vídeo percorre até virar clipes prontos para redes sociais.
           </p>
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {pipelineSteps.map((item) => (
-              <div
-                key={item.title}
-                className="rounded-xl border bg-card p-6 transition-colors hover:border-primary/30"
-              >
-                <h3 className="font-semibold">{item.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                  {item.description}
-                </p>
-              </div>
-            ))}
+          <div className="mt-12 border-fade">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3">
+              {pipelineSteps.map((item) => (
+                <div
+                  key={item.title}
+                  className="rounded-none border border-white/10 p-6"
+                >
+                  <h3 className="font-semibold text-white">{item.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </Section>
 
       <Section className="text-center">
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-3xl font-bold">Pronto para criar seus primeiros clipes?</h2>
+          <h2 className="text-3xl font-bold text-white">Pronto para criar seus primeiros clipes?</h2>
           <p className="mt-3 text-muted-foreground">
             Teste grátis por 7 dias, sem cartão de crédito.
           </p>
           <div className="mt-8 flex items-center justify-center gap-4">
-            <Button size="lg">Começar agora</Button>
-            <Button size="lg" variant="outline">
-              Ver planos
-            </Button>
+            <Link href={APP_URL}>
+              <ShimmerButton>Começar agora</ShimmerButton>
+            </Link>
+            <Link href="/precos">
+              <ShimmerButton background="#333333">Ver planos</ShimmerButton>
+            </Link>
           </div>
         </div>
       </Section>

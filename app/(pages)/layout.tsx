@@ -5,7 +5,7 @@ export default function PagesLayout({ children }: { children: React.ReactNode })
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-background text-foreground pt-16">
+      <main className="min-h-screen bg-black text-foreground pt-16">
         {children}
       </main>
       <Footer />

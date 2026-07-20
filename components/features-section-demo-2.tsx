@@ -56,10 +56,12 @@ export default function FeaturesSectionDemo() {
           </p>
         </div>
 
-        <div className="relative z-10 mx-auto grid w-full grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature, index) => (
-            <Feature key={feature.title} {...feature} index={index} />
-          ))}
+        <div className="relative z-10 mx-auto w-full border-fade">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+            {features.map((feature, index) => (
+              <Feature key={feature.title} {...feature} index={index} />
+            ))}
+          </div>
         </div>
       </div>
     </section>
@@ -80,7 +82,7 @@ const Feature = ({
   return (
     <div
       className={cn(
-        "flex flex-col border-border/40 py-10 lg:border-r",
+        "flex flex-col border-white/10 py-10 lg:border-r",
         (index === 0 || index === 4) && "lg:border-l",
         index < 4 && "lg:border-b"
       )}

@@ -29,19 +29,18 @@ export function PodcastHowItWorks() {
           </p>
         </div>
 
-        <div className="grid w-full gap-8 sm:grid-cols-3">
-          {steps.map((s, i) => (
-            <div key={i} className="relative flex flex-col gap-3">
-              <span className="text-5xl font-bold tracking-tighter text-muted-foreground/60">
-                {s.step}
-              </span>
-              <h3 className="text-lg font-medium">{s.title}</h3>
-              <p className="text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
-              {i < steps.length - 1 && (
-                <div className="mt-2 hidden h-px w-full sm:block" />
-              )}
-            </div>
-          ))}
+        <div className="w-full border-fade">
+          <div className="grid sm:grid-cols-3">
+            {steps.map((s, i) => (
+              <div key={i} className="flex flex-col gap-3 border border-white/10 p-6">
+                <span className="bg-linear-to-r from-brand to-brand/60 bg-clip-text text-5xl font-bold tracking-tighter text-transparent">
+                  {s.step}
+                </span>
+                <h3 className="text-lg font-medium text-white">{s.title}</h3>
+                <p className="text-sm leading-relaxed text-muted-foreground">{s.desc}</p>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -1,7 +1,6 @@
 import type { Metadata } from "next"
 import { Section } from "@/components/ui/section"
-import { Button } from "@/components/ui/button"
-import { BreadcrumbList } from "@/components/seo/breadcrumb-list"
+import { ShimmerButton } from "@/components/ui/shimmer-button"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
 
@@ -48,23 +47,31 @@ const values = [
 
 export default function Sobre() {
   return (
-    <div className="pt-20">
-      <Section className="text-center">
+    <div>
+      <Section className="relative isolate -mt-16 overflow-hidden pt-24 pb-16 text-center sm:pb-28">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-brand/25 blur-[120px]"
+        />
+
         <div className="mx-auto max-w-4xl">
-          <BreadcrumbList items={[{ name: "Sobre", url: `${siteUrl}/sobre/` }]} />
-          <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">
             Sobre o{" "}
-            <span className="text-primary">Sleepcomet</span>
+            <span className="bg-linear-to-r from-brand to-brand/60 bg-clip-text text-transparent">
+              Sleepcomet
+            </span>
           </h1>
           <p className="mx-auto mt-4 max-w-2xl text-lg text-muted-foreground">
-            Transformando a maneira como criadores de conteúdo produzem clipes virais.
+            Transformando a maneira como criadores de conteúdo
+            <br />
+            produzem clipes virais.
           </p>
         </div>
       </Section>
 
       <Section>
         <div className="mx-auto max-w-3xl space-y-6 text-center">
-          <h2 className="text-3xl font-bold">Nossa missão</h2>
+          <h2 className="text-3xl font-bold text-white">Nossa missão</h2>
           <p className="text-lg leading-relaxed text-muted-foreground">
             No Sleepcomet, acreditamos que todo criador de conteúdo merece ferramentas que
             potencializem seu trabalho, não que roubem seu tempo. Nossa missão é eliminar o trabalho
@@ -79,38 +86,39 @@ export default function Sobre() {
         </div>
       </Section>
 
-      <Section className="bg-muted/30">
+      <Section>
         <div className="mx-auto max-w-4xl">
-          <h2 className="text-center text-3xl font-bold">Nossos valores</h2>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2">
-            {values.map((v) => (
-              <div
-                key={v.title}
-                className="rounded-xl border bg-card p-6 transition-colors hover:border-primary/30"
-              >
-                <h3 className="font-semibold">{v.title}</h3>
-                <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
-              </div>
-            ))}
+          <h2 className="text-center text-3xl font-bold text-white">Nossos valores</h2>
+          <div className="mt-10 border-fade">
+            <div className="grid sm:grid-cols-2">
+              {values.map((v) => (
+                <div
+                  key={v.title}
+                  className="rounded-none border border-white/10 p-6"
+                >
+                  <h3 className="font-semibold text-white">{v.title}</h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{v.desc}</p>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </Section>
 
       <Section className="text-center">
         <div className="mx-auto max-w-2xl">
-          <h2 className="text-2xl font-bold">Sleepcomet no GitHub</h2>
+          <h2 className="text-2xl font-bold text-white">Sleepcomet no GitHub</h2>
           <p className="mt-3 text-muted-foreground">
             Acompanhe o desenvolvimento e as novidades do Sleepcomet no GitHub.
           </p>
-          <Button size="lg" className="mt-8" asChild>
-            <a
-              href="https://github.com/sleepcometlabs"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              github.com/sleepcometlabs →
-            </a>
-          </Button>
+          <a
+            href="https://github.com/sleepcometlabs"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-block"
+          >
+            <ShimmerButton background="#333333">github.com/sleepcometlabs →</ShimmerButton>
+          </a>
         </div>
       </Section>
     </div>

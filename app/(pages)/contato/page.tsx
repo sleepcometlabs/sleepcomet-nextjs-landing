@@ -1,6 +1,5 @@
 import type { Metadata } from "next"
 import { Section } from "@/components/ui/section"
-import { BreadcrumbList } from "@/components/seo/breadcrumb-list"
 import { ContactContent } from "./contact-content"
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://sleepcomet.com"
@@ -28,13 +27,18 @@ export const metadata: Metadata = {
 
 export default function Contato() {
   return (
-    <div className="pt-20">
-      <Section className="text-center">
+    <div>
+      <Section className="relative isolate -mt-16 overflow-hidden pt-24 pb-16 text-center sm:pb-28">
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[420px] w-[720px] -translate-x-1/2 -translate-y-1/3 rounded-full bg-brand/25 blur-[120px]"
+        />
         <div className="mx-auto max-w-4xl">
-          <BreadcrumbList items={[{ name: "Contato", url: `${siteUrl}/contato/` }]} />
-          <h1 className="font-heading text-4xl font-bold tracking-tight sm:text-5xl">Contato</h1>
+          <h1 className="text-4xl font-bold tracking-tight text-white sm:text-6xl">Contato</h1>
           <p className="mx-auto mt-4 max-w-md text-lg text-muted-foreground">
-            Tem uma dúvida, sugestão ou quer bater um papo? Escolha o canal ideal.
+            Tem uma dúvida, sugestão ou quer bater um papo?
+            <br />
+            Escolha o canal ideal.
           </p>
         </div>
       </Section>
